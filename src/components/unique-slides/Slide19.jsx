@@ -13,7 +13,7 @@ const StunningHatchingJar = () => (
         <stop offset="90%" stopColor="rgba(255,255,255,0.1)" />
         <stop offset="100%" stopColor="rgba(255,255,255,0.5)" />
       </linearGradient>
-      
+
       <linearGradient id="jarHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
         <stop offset="100%" stopColor="rgba(255,255,255,0.0)" />
@@ -35,24 +35,24 @@ const StunningHatchingJar = () => (
 
       {/* Glows */}
       <filter id="eggGlow">
-        <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+        <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
         <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
       <filter id="larvaeGlow">
-        <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
+        <feGaussianBlur stdDeviation="0.8" result="coloredBlur" />
         <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
       <filter id="coreGlow">
-        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
         <feMerge>
-          <feMergeNode in="coloredBlur"/>
-          <feMergeNode in="SourceGraphic"/>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
     </defs>
@@ -63,16 +63,16 @@ const StunningHatchingJar = () => (
     <rect x="47" y="105" width="6" height="20" fill="#38bdf8" filter="url(#coreGlow)" opacity="0.8" /> {/* Glowing water inlet pipe */}
 
     {/* Water Volume (Cylindrical Top, Conical Bottom) */}
-    <path 
-      d="M 22 25 L 78 25 L 78 60 C 78 85, 55 95, 53 105 L 47 105 C 45 95, 22 85, 22 60 Z" 
-      fill="url(#jarWater)" 
+    <path
+      d="M 22 25 L 78 25 L 78 60 C 78 85, 55 95, 53 105 L 47 105 C 45 95, 22 85, 22 60 Z"
+      fill="url(#jarWater)"
     />
 
     {/* Central Upward Jet (Bubbles / Flow) */}
-    <motion.path 
-      d="M 49 105 L 49 30 M 51 105 L 51 30" 
-      stroke="rgba(255,255,255,0.3)" 
-      strokeWidth="2" 
+    <motion.path
+      d="M 49 105 L 49 30 M 51 105 L 51 30"
+      stroke="rgba(255,255,255,0.3)"
+      strokeWidth="2"
       strokeDasharray="4 8"
       animate={{ strokeDashoffset: [24, 0] }}
       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
@@ -80,20 +80,20 @@ const StunningHatchingJar = () => (
 
     <motion.g>
       {[...Array(15)].map((_, i) => (
-        <motion.circle 
+        <motion.circle
           key={`bubble-${i}`}
-          animate={{ 
-            y: [100, 25], 
-            opacity: [0, 1, 0], 
-            x: [50, 50 + (Math.random() - 0.5) * 20] 
+          animate={{
+            y: [100, 25],
+            opacity: [0, 1, 0],
+            x: [50, 50 + (Math.random() - 0.5) * 20]
           }}
-          transition={{ 
-            duration: 1 + Math.random() * 2, 
-            repeat: Infinity, 
+          transition={{
+            duration: 1 + Math.random() * 2,
+            repeat: Infinity,
             delay: Math.random() * 2,
             ease: "easeOut"
           }}
-          cx="50" cy="100" r={Math.random() * 1.5 + 0.5} fill="#cffafe" 
+          cx="50" cy="100" r={Math.random() * 1.5 + 0.5} fill="#cffafe"
         />
       ))}
     </motion.g>
@@ -103,24 +103,24 @@ const StunningHatchingJar = () => (
       {[...Array(20)].map((_, i) => {
         // Group them in left and right tumbling patterns
         const isLeft = i % 2 === 0;
-        const xPath = isLeft 
-          ? [50, 48, 30 + Math.random()*5, 40, 50] // Left tumble
-          : [50, 52, 70 - Math.random()*5, 60, 50]; // Right tumble
+        const xPath = isLeft
+          ? [50, 48, 30 + Math.random() * 5, 40, 50] // Left tumble
+          : [50, 52, 70 - Math.random() * 5, 60, 50]; // Right tumble
         return (
-          <motion.circle 
+          <motion.circle
             key={`egg-${i}`}
-            animate={{ 
-              y: [100, 50, 65, 85, 100], 
+            animate={{
+              y: [100, 50, 65, 85, 100],
               x: xPath,
               scale: [0.8, 1.2, 1, 0.9, 0.8]
             }}
-            transition={{ 
-              duration: 3 + Math.random() * 2, 
-              repeat: Infinity, 
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
               ease: "easeInOut",
               delay: Math.random() * 3
             }}
-            cx="50" cy="100" r="2.8" fill="#fbbf24" 
+            cx="50" cy="100" r="2.8" fill="#fbbf24"
           />
         )
       })}
@@ -129,18 +129,18 @@ const StunningHatchingJar = () => (
     {/* Hatching Larvae near the top */}
     <motion.g filter="url(#larvaeGlow)">
       {[...Array(6)].map((_, i) => (
-        <motion.path 
+        <motion.path
           key={`larva-${i}`}
-          d="M 0 0 Q -2 -1 -4 0 Q -2 1 0 0" 
+          d="M 0 0 Q -2 -1 -4 0 Q -2 1 0 0"
           fill="#34d399"
-          animate={{ 
-            x: [30 + Math.random()*40, 30 + Math.random()*40, 30 + Math.random()*40], 
-            y: [25 + Math.random()*15, 25 + Math.random()*15, 25 + Math.random()*15],
+          animate={{
+            x: [30 + Math.random() * 40, 30 + Math.random() * 40, 30 + Math.random() * 40],
+            y: [25 + Math.random() * 15, 25 + Math.random() * 15, 25 + Math.random() * 15],
             rotate: [0, 45, -45, 90, 0]
           }}
-          transition={{ 
-            x: { duration: 4 + Math.random()*4, repeat: Infinity, ease: "easeInOut" },
-            y: { duration: 3 + Math.random()*3, repeat: Infinity, ease: "easeInOut" },
+          transition={{
+            x: { duration: 4 + Math.random() * 4, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 3 + Math.random() * 3, repeat: Infinity, ease: "easeInOut" },
             rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
           }}
         />
@@ -148,28 +148,28 @@ const StunningHatchingJar = () => (
     </motion.g>
 
     {/* Glass Jar Body (Front) */}
-    <path 
-      d="M 20 15 L 20 60 C 20 85, 45 95, 47 105 L 53 105 C 55 95, 80 85, 80 60 L 80 15" 
-      fill="url(#jarGlassBase)" 
-      stroke="rgba(255,255,255,0.7)" 
-      strokeWidth="1.5" 
+    <path
+      d="M 20 15 L 20 60 C 20 85, 45 95, 47 105 L 53 105 C 55 95, 80 85, 80 60 L 80 15"
+      fill="url(#jarGlassBase)"
+      stroke="rgba(255,255,255,0.7)"
+      strokeWidth="1.5"
     />
-    
+
     {/* High-End Glass Edge Highlights */}
-    <path 
-      d="M 22 20 L 22 60 C 22 80, 42 90, 47 100" 
-      stroke="url(#jarHighlight)" 
-      strokeWidth="3" 
-      strokeLinecap="round" 
-      fill="none" 
+    <path
+      d="M 22 20 L 22 60 C 22 80, 42 90, 47 100"
+      stroke="url(#jarHighlight)"
+      strokeWidth="3"
+      strokeLinecap="round"
+      fill="none"
       opacity="0.8"
     />
-    <path 
-      d="M 78 20 L 78 60" 
-      stroke="rgba(255,255,255,0.4)" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      fill="none" 
+    <path
+      d="M 78 20 L 78 60"
+      stroke="rgba(255,255,255,0.4)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
     />
 
     {/* Top Elliptical Opening */}
@@ -177,20 +177,20 @@ const StunningHatchingJar = () => (
     <path d="M 20 15 A 30 7 0 0 0 80 15" fill="none" stroke="rgba(255,255,255,1)" strokeWidth="3" />
 
     {/* Overflowing Water Effect at the rim */}
-    <motion.path 
-      d="M 22 17 Q 20 22 18 28" 
-      stroke="#38bdf8" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <motion.path
+      d="M 22 17 Q 20 22 18 28"
+      stroke="#38bdf8"
+      strokeWidth="2"
+      strokeLinecap="round"
       fill="none"
       animate={{ y: [0, 5, 0], opacity: [0, 1, 0] }}
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
     />
-    <motion.path 
-      d="M 78 17 Q 80 22 82 28" 
-      stroke="#38bdf8" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <motion.path
+      d="M 78 17 Q 80 22 82 28"
+      stroke="#38bdf8"
+      strokeWidth="2"
+      strokeLinecap="round"
       fill="none"
       animate={{ y: [0, 5, 0], opacity: [0, 1, 0] }}
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -233,7 +233,7 @@ export default function Slide19({ direction }) {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.15),transparent_70%)]"></div>
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.03)_1px,transparent_1px)] bg-[size:40px_40px] mix-blend-screen opacity-50"></div>
-        
+
         {/* Glowing floor grid */}
         <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-cyan-900/30 to-transparent perspective-1000">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.15)_1px,transparent_1px)] bg-[size:100%_40px] [transform:rotateX(60deg)_scale(2)] opacity-40"></div>
@@ -241,7 +241,7 @@ export default function Slide19({ direction }) {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl h-full flex flex-col justify-center">
-        
+
         {/* Title Top Center */}
         <div className="text-center mb-8 mt-4">
           <div className="inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-bold tracking-widest uppercase mb-4 text-sm shadow-[0_0_20px_rgba(34,211,238,0.2)]">
@@ -254,13 +254,13 @@ export default function Slide19({ direction }) {
         </div>
 
         {/* Symmetry Core Layout */}
-        <motion.div 
+        <motion.div
           variants={stagger}
           initial="hidden"
           animate="show"
           className="flex-1 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-4 relative"
         >
-          
+
           {/* Connecting Lines for Desktop */}
           <div className="hidden lg:block absolute inset-0 pointer-events-none -z-10">
             <svg className="w-full h-full">
@@ -295,7 +295,7 @@ export default function Slide19({ direction }) {
           </div>
 
           {/* Center Column (Majestic SVG Display) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "backOut" }}
@@ -303,20 +303,20 @@ export default function Slide19({ direction }) {
           >
             <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full flex items-center justify-center">
               {/* Spinning Tech Rings */}
-              <motion.div 
-                animate={{ rotate: 360 }} 
+              <motion.div
+                animate={{ rotate: 360 }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 border-[3px] border-dashed border-cyan-500/40 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.2)]"
               ></motion.div>
-              <motion.div 
-                animate={{ rotate: -360 }} 
+              <motion.div
+                animate={{ rotate: -360 }}
                 transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-[-20px] border border-blue-500/30 rounded-full"
               ></motion.div>
-              
+
               {/* Inner Glowing Orb */}
               <div className="absolute inset-10 bg-slate-900/90 rounded-full backdrop-blur-3xl border border-cyan-400/50 shadow-[0_0_100px_rgba(34,211,238,0.4)]"></div>
-              
+
               {/* The Stunning SVG */}
               <div className="relative z-10 scale-110 md:scale-125 mb-6">
                 <StunningHatchingJar />
@@ -349,11 +349,11 @@ export default function Slide19({ direction }) {
                     <span className="text-cyan-400 font-bold text-sm">২৮°C</span>
                   </div>
                   <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: '70%' }}
                       transition={{ duration: 1.5, delay: 0.5 }}
-                      className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full relative" 
+                      className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full relative"
                     >
                       <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)] bg-[size:1rem_1rem] animate-[progress_1s_linear_infinite]"></div>
                     </motion.div>
@@ -365,13 +365,13 @@ export default function Slide19({ direction }) {
                     <span className="text-blue-400 font-bold text-sm">Optimal</span>
                   </div>
                   <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
-                    <motion.div 
+                    <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: '90%' }}
                       transition={{ duration: 1.5, delay: 0.7 }}
-                      className="bg-gradient-to-r from-cyan-500 to-blue-400 h-2 rounded-full relative" 
+                      className="bg-gradient-to-r from-cyan-500 to-blue-400 h-2 rounded-full relative"
                     >
-                       <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)] bg-[size:1rem_1rem] animate-[progress_1s_linear_infinite]"></div>
+                      <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.2)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.2)_50%,rgba(255,255,255,0.2)_75%,transparent_75%,transparent)] bg-[size:1rem_1rem] animate-[progress_1s_linear_infinite]"></div>
                     </motion.div>
                   </div>
                 </div>

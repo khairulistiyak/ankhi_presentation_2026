@@ -39,6 +39,26 @@ const Slide12 = ({ direction = 1 }) => {
             backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59, 130, 246, 0.2) 10px, rgba(59, 130, 246, 0.2) 12px)'
           }}
         />
+
+        {/* Light Bubbles (halka bud budi) */}
+        {[...Array(3)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{ 
+              y: [0, -80], 
+              opacity: [0, 0.6, 0], 
+              scale: [0.5, 1, 0.5] 
+            }}
+            transition={{ 
+              duration: 2 + Math.random() * 2, 
+              repeat: Infinity, 
+              delay: delay + Math.random() * 2,
+              ease: "easeOut"
+            }}
+            className="absolute bottom-1 w-1.5 h-1.5 bg-blue-300 dark:bg-blue-400 rounded-full z-10"
+            style={{ left: `${25 + (i * 25)}%` }}
+          />
+        ))}
       </motion.div>
     </div>
   );

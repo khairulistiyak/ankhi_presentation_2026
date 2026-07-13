@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FlaskConical, Syringe, Settings } from 'lucide-react';
 
 const Slide13 = ({ direction = 1 }) => {
   const slideVariants = {
@@ -250,9 +251,9 @@ const Slide13 = ({ direction = 1 }) => {
           {/* Futuristic Info Cards */}
           <div className="grid grid-cols-1 gap-4">
             {[
-              { title: "হরমোন", desc: "সংরক্ষিত P.G ও H.C.G", icon: "🧪", color: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/30" },
-              { title: "বিকার ও পাত্র", desc: "সিরিঞ্জ, টেস্টটিউব, প্লাস্টিকের বল", icon: "💉", color: "text-teal-400", bg: "bg-teal-500/10", border: "border-teal-500/30" },
-              { title: "সেন্ট্রিফিউজ", desc: "হাতে চালিত বা ইলেকট্রিক", icon: "⚙️", color: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/30" },
+              { title: "হরমোন", desc: "সংরক্ষিত P.G ও H.C.G", icon: <FlaskConical size={24} />, color: "text-indigo-400", bg: "bg-indigo-500/10", border: "border-indigo-500/30" },
+              { title: "বিকার ও পাত্র", desc: "সিরিঞ্জ, টেস্টটিউব, প্লাস্টিকের বল", icon: <Syringe size={24} />, color: "text-teal-400", bg: "bg-teal-500/10", border: "border-teal-500/30" },
+              { title: "সেন্ট্রিফিউজ", desc: "হাতে চালিত বা ইলেকট্রিক", icon: <Settings size={24} />, color: "text-orange-400", bg: "bg-orange-500/10", border: "border-orange-500/30" },
             ].map((item, index) => (
               <motion.div
                 key={index}

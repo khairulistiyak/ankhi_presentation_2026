@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Fish, Briefcase } from 'lucide-react';
 
 const Slide10 = ({ direction = 1 }) => {
   const slideVariants = {
@@ -141,15 +142,15 @@ const Slide10 = ({ direction = 1 }) => {
             <div className="mt-10 flex flex-wrap gap-4">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.8 }}
-                className="px-6 py-3 rounded-full bg-blue-100/50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-800/50 backdrop-blur-md"
+                className="px-6 py-3 rounded-full bg-blue-100/50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-800/50 backdrop-blur-md flex items-center gap-2"
               >
-                🐟 আমিষের চাহিদা পূরণ
+                <Fish size={18} /> আমিষের চাহিদা পূরণ
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.0 }}
-                className="px-6 py-3 rounded-full bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-800/50 backdrop-blur-md"
+                className="px-6 py-3 rounded-full bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-800/50 backdrop-blur-md flex items-center gap-2"
               >
-                💼 কর্মসংস্থান সৃষ্টি
+                <Briefcase size={18} /> কর্মসংস্থান সৃষ্টি
               </motion.div>
             </div>
           </motion.div>

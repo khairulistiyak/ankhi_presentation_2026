@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Scissors, Dna, FlaskConical, Syringe } from 'lucide-react';
 
 const Slide15 = ({ direction = 1 }) => {
   const slideVariants = {
@@ -77,8 +78,8 @@ const Slide15 = ({ direction = 1 }) => {
           {/* Info Features */}
           <div className="grid grid-cols-1 gap-5">
             {[
-              { title: "মস্তক ব্যবচ্ছেদ", desc: "মাছের মাথার তালু ২-৩ সে.মি গভীর করে কাটা হয়।", icon: "✂️", color: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/20", glow: "group-hover:shadow-[0_0_30px_rgba(244,63,94,0.15)]" },
-              { title: "গ্রন্থি নিষ্কাশন", desc: "মগজের ঠিক নিচে থাকা গ্রন্থিটি চিমটার সাহায্যে তুলে আনা হয়।", icon: "🧬", color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20", glow: "group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]" }
+              { title: "মস্তক ব্যবচ্ছেদ", desc: "মাছের মাথার তালু ২-৩ সে.মি গভীর করে কাটা হয়।", icon: <Scissors size={24} />, color: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/20", glow: "group-hover:shadow-[0_0_30px_rgba(244,63,94,0.15)]" },
+              { title: "গ্রন্থি নিষ্কাশন", desc: "মগজের ঠিক নিচে থাকা গ্রন্থিটি চিমটার সাহায্যে তুলে আনা হয়।", icon: <Dna size={24} />, color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20", glow: "group-hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]" }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -169,12 +170,14 @@ const Slide15 = ({ direction = 1 }) => {
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-50"></div>
               
-              {/* Decorative Hexagon */}
-              <div className="absolute -bottom-16 -right-16 text-[150px] opacity-[0.03] grayscale group-hover:grayscale-0 group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 rotate-12">🧪</div>
+              {/* Decorative Hexagon SVG Watermark */}
+              <div className="absolute -bottom-16 -right-16 text-indigo-500 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 rotate-12">
+                <FlaskConical size={250} strokeWidth={1} />
+              </div>
               
               <div className="flex items-center justify-between mb-8 relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/40 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-                  <span className="text-3xl drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]">🧪</span>
+                <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/40 shadow-[0_0_20px_rgba(99,102,241,0.2)] text-indigo-300">
+                  <span className="drop-shadow-[0_0_10px_rgba(99,102,241,0.8)]"><FlaskConical size={32} /></span>
                 </div>
                 <div className="px-3 py-1 bg-indigo-500/10 rounded-full border border-indigo-500/30 text-indigo-300 text-xs font-bold tracking-widest uppercase">
                   Phase 01
@@ -198,12 +201,14 @@ const Slide15 = ({ direction = 1 }) => {
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
               <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-50"></div>
               
-              {/* Decorative Element */}
-              <div className="absolute -bottom-16 -right-16 text-[150px] opacity-[0.03] grayscale group-hover:grayscale-0 group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 -rotate-12">💉</div>
+              {/* Decorative SVG Watermark */}
+              <div className="absolute -bottom-16 -right-16 text-orange-500 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 transition-all duration-700 -rotate-12">
+                <Syringe size={250} strokeWidth={1} />
+              </div>
 
               <div className="flex items-center justify-between mb-8 relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-orange-500/20 flex items-center justify-center border border-orange-500/40 shadow-[0_0_20px_rgba(249,115,22,0.2)]">
-                  <span className="text-3xl drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]">💉</span>
+                <div className="w-16 h-16 rounded-2xl bg-orange-500/20 flex items-center justify-center border border-orange-500/40 shadow-[0_0_20px_rgba(249,115,22,0.2)] text-orange-300">
+                  <span className="drop-shadow-[0_0_10px_rgba(249,115,22,0.8)]"><Syringe size={32} /></span>
                 </div>
                 <div className="px-3 py-1 bg-orange-500/10 rounded-full border border-orange-500/30 text-orange-300 text-xs font-bold tracking-widest uppercase">
                   Phase 02

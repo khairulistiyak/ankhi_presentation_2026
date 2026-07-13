@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Dna, Hourglass } from 'lucide-react';
 
 const Slide14 = ({ direction = 1 }) => {
   const slideVariants = {
@@ -131,8 +132,8 @@ const Slide14 = ({ direction = 1 }) => {
           {/* Info Features */}
           <div className="grid grid-cols-1 gap-4">
             {[
-              { title: "সুস্থ ও সবল", desc: "রোগমুক্ত এবং স্বাস্থ্যবান হতে হবে।", icon: "🧬", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30" },
-              { title: "সঠিক বয়স", desc: "পূর্ণবয়স্ক ও প্রজননক্ষম হওয়া আবশ্যক।", icon: "⏳", color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/30" }
+              { title: "সুস্থ ও সবল", desc: "রোগমুক্ত এবং স্বাস্থ্যবান হতে হবে।", icon: <Dna size={24} />, color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30" },
+              { title: "সঠিক বয়স", desc: "পূর্ণবয়স্ক ও প্রজননক্ষম হওয়া আবশ্যক।", icon: <Hourglass size={24} />, color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/30" }
             ].map((item, index) => (
               <motion.div
                 key={index}

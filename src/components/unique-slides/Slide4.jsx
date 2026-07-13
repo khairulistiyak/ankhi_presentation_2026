@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MapPin, TrendingUp, Factory } from 'lucide-react';
 
 export default function Slide4({ direction }) {
   const variants = {
@@ -82,8 +83,8 @@ export default function Slide4({ direction }) {
         >
           {/* Card 1 */}
           <motion.div variants={listItem} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-start gap-6 hover:bg-white/15 transition-colors">
-            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30">
-              <span className="text-2xl">📍</span>
+            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30 text-indigo-300">
+              <MapPin size={28} />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-1">অবস্থান ও নাম</h3>
@@ -93,8 +94,8 @@ export default function Slide4({ direction }) {
 
           {/* Card 2 */}
           <motion.div variants={listItem} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-start gap-6 hover:bg-white/15 transition-colors">
-            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30">
-              <span className="text-2xl">📈</span>
+            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30 text-indigo-300">
+              <TrendingUp size={28} />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-1">উৎপাদন ও আয়</h3>
@@ -104,8 +105,8 @@ export default function Slide4({ direction }) {
 
           {/* Card 3 */}
           <motion.div variants={listItem} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-start gap-6 hover:bg-white/15 transition-colors">
-            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30">
-              <span className="text-2xl">🏭</span>
+            <div className="w-14 h-14 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 border border-indigo-400/30 text-indigo-300">
+              <Factory size={28} />
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-1">অবকাঠামো সুবিধা</h3>

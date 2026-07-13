@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { Fish, CircleDollarSign } from 'lucide-react';
 
 // Smooth Counter Component with Bengali Numerals
 const Counter = ({ from = 0, to, duration = 2.5, delay = 0 }) => {
@@ -116,7 +117,7 @@ const Slide11 = ({ direction = 1 }) => {
 
               <div className="flex justify-between items-start mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center text-3xl shadow-inner border border-teal-200/50 dark:border-teal-800/50">
-                  🐟
+                  <Fish size={32} />
                 </div>
               </div>
 
@@ -138,7 +139,7 @@ const Slide11 = ({ direction = 1 }) => {
 
               <div className="flex justify-between items-start mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl shadow-inner border border-blue-200/50 dark:border-blue-800/50">
-                  💰
+                  <CircleDollarSign size={32} />
                 </div>
               </div>
 

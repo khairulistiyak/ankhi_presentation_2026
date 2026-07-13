@@ -1,85 +1,184 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 
-export default function Slide11({ direction }) {
-  const advantages = [
-    "প্রণোদিত প্রজননের মাধ্যমে মাছের সংকরায়ন (Hybridization) সম্ভব।",
-    "হ্যাচারির আঁতুড় পুকুরে এই ডিম-পোনা ফুটিয়ে ও বিক্রি করে অতিরিক্ত আয় সম্ভব।",
-    "কার্প জাতীয় মাছের বদ্ধ পানিতে ডিম ফোটানো সম্ভব হয়। মাছের ভেজাল ডিম-পোনা কিনে ঠকতে হয় না।",
-    "স্বাভাবিক বসতির বাহিরে প্রজনন করানো যায়।",
-    "উন্নত মানের মাছের বীজ থেকে ভালো মাছের উৎপাদন সম্ভব হয়।",
-    "পছন্দমত বিভিন্ন প্রজাতির মাছের প্রজনন করিয়ে উন্নত পোনা উৎপাদন করা যায়।",
-    "ভালো আকারের ও ওজনের মাছ পাওয়া সুনিশ্চিত হয়।"
-  ];
+// Smooth Counter Component with Bengali Numerals
+const Counter = ({ from = 0, to, duration = 2.5, delay = 0 }) => {
+  const count = useMotionValue(from);
+  const [displayValue, setDisplayValue] = useState(from);
 
-  const variants = {
-    enter: (dir) => ({ opacity: 0, scale: 0.8, y: dir > 0 ? 100 : -100 }),
-    center: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, type: "spring" } },
-    exit: (dir) => ({ opacity: 0, scale: 0.8, y: dir < 0 ? 100 : -100, transition: { duration: 0.4 } })
+  useEffect(() => {
+    const controls = animate(count, to, { 
+      duration: duration, 
+      delay: delay,
+      ease: [0.22, 1, 0.36, 1], // Cinematic ease out
+      onUpdate: (latest) => setDisplayValue(Math.round(latest))
+    });
+    return controls.stop;
+  }, [to, delay, duration]);
+
+  const toBengaliNumber = (num) => {
+    const banglaDigits = {
+      '0': '০', '1': '১', '2': '২', '3': '৩', '4': '৪',
+      '5': '৫', '6': '৬', '7': '৭', '8': '৮', '9': '৯'
+    };
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(/\d/g, x => banglaDigits[x] || x);
   };
 
-  const listVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+  return <>{toBengaliNumber(displayValue)}</>;
+};
+
+const Slide11 = ({ direction = 1 }) => {
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      rotateY: direction > 0 ? 10 : -10,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      rotateY: 0,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      rotateY: direction < 0 ? 10 : -10,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    }),
+  };
+
+  const contentVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { staggerChildren: 0.2, delayChildren: 0.4 } 
+    }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
+
+  const bgImageUrl = "https://image.pollinations.ai/prompt/A%20wide%20shot%20of%20a%20commercial%20fish%20hatchery%20or%20large%20fish%20ponds?width=1200&height=800&nologo=true";
 
   return (
     <motion.div
       custom={direction}
-      variants={variants}
+      variants={slideVariants}
       initial="enter"
       animate="center"
       exit="exit"
-      className="absolute inset-0 w-full h-full bg-emerald-50 flex items-center justify-center p-8 overflow-hidden"
+      className="absolute inset-0 flex items-center justify-center bg-slate-100 dark:bg-[#0B1120] p-4 sm:p-8 overflow-hidden transition-colors duration-700 font-sans [perspective:1200px]"
     >
-      <div className="max-w-5xl w-full bg-white rounded-[40px] shadow-2xl shadow-emerald-900/10 p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center relative overflow-hidden">
+      {/* Abstract Glowing Background Orbs (Premium Feel matching Slide 10) */}
+      <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-teal-400/20 dark:bg-teal-600/20 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-400/20 dark:bg-blue-600/20 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen pointer-events-none"></div>
+
+      {/* Main Glassmorphic Container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/50 dark:border-slate-700/50 rounded-[40px] shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 min-h-[min-content]">
         
-        {/* Decorative Graphic */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400/10 rounded-bl-full pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-teal-400/10 rounded-tr-full pointer-events-none"></div>
-
-        {/* Left Side: Title */}
-        <div className="md:w-1/3 text-center md:text-left z-10">
-          <div className="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-            </svg>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-4">
-            প্রণোদিত প্রজননের <span className="text-emerald-600">সুবিধা</span>
-          </h2>
-          <p className="text-slate-500 text-lg">
-            কেন এই পদ্ধতি আধুনিক মৎস্য চাষে এত বেশি ব্যবহৃত হচ্ছে তার প্রধান কারণগুলো।
-          </p>
-        </div>
-
-        {/* Right Side: List */}
+        {/* Left Column: Data Cards */}
         <motion.div 
-          variants={listVariants}
-          initial="hidden"
-          animate="show"
-          className="md:w-2/3 z-10"
+          variants={contentVariants} 
+          initial="hidden" 
+          animate="visible"
+          className="w-full lg:w-[55%] flex flex-col justify-center gap-6"
         >
-          <ul className="space-y-4">
-            {advantages.map((adv, index) => (
-              <motion.div key={index} variants={itemVariants} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+          <motion.div variants={itemVariants} className="mb-2">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-12 h-[2px] bg-teal-500 rounded-full"></span>
+              <span className="text-sm font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">ওভারভিউ</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-800 dark:text-white tracking-tight leading-tight">
+              <span className="bg-gradient-to-r from-teal-600 to-blue-500 dark:from-teal-400 dark:to-blue-400 bg-clip-text py-3 text-transparent leading-relaxed drop-shadow-sm">
+                খামার সম্পর্কে তথ্য
+              </span>
+            </h2>
+            <div className="relative mt-4">
+              <div className="absolute left-0 top-2 bottom-2 w-1.5 rounded-full bg-gradient-to-b from-teal-500 to-blue-400 opacity-80"></div>
+              <p className="pl-6 text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed py-1">
+                নাটোর মৎস্য বীজ উৎপাদন খামার, নাটোর সদর
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            {/* Animated Stat Card 1 */}
+            <motion.div 
+              variants={itemVariants}
+              className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-[32px] p-6 md:p-8 shadow-xl border border-white/80 dark:border-slate-700/80 overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100/50 dark:bg-teal-900/20 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+              
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center text-3xl shadow-inner border border-teal-200/50 dark:border-teal-800/50">
+                  🐟
                 </div>
-                <li className="text-xl text-slate-700 leading-snug pt-1">{adv}</li>
-              </motion.div>
-            ))}
-          </ul>
+              </div>
+              
+              <h3 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">বার্ষিক উৎপাদন</h3>
+              <div className="text-5xl lg:text-6xl font-black text-slate-800 dark:text-white flex items-baseline gap-2">
+                <span className="inline-block min-w-[120px] bg-gradient-to-br from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent tabular-nums">
+                  <Counter from={0} to={350} duration={2.5} delay={0.6} />
+                </span>
+                <span className="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">কোটি পোনা</span>
+              </div>
+            </motion.div>
+
+            {/* Animated Stat Card 2 */}
+            <motion.div 
+              variants={itemVariants}
+              className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-[32px] p-6 md:p-8 shadow-xl border border-white/80 dark:border-slate-700/80 overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 dark:bg-blue-900/20 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
+
+              <div className="flex justify-between items-start mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl shadow-inner border border-blue-200/50 dark:border-blue-800/50">
+                  💰
+                </div>
+              </div>
+
+              <h3 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">বার্ষিক আয়</h3>
+              <div className="text-4xl sm:text-5xl lg:text-5xl font-black text-slate-800 dark:text-white flex items-baseline gap-2">
+                <span className="inline-block min-w-[160px] sm:min-w-[180px] bg-gradient-to-br from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent tracking-tight tabular-nums">
+                  <Counter from={0} to={85000} duration={3} delay={0.8} />
+                </span>
+                <span className="text-xl sm:text-2xl text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">টাকা</span>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
+
+        {/* Right Column: Completely STATIC Image with modern container */}
+        <div className="w-full lg:w-[45%] mt-8 lg:mt-0 relative shrink-0">
+          {/* Static Image Box - NO MOTION OR ROTATE ANIMATION */}
+          <div className="relative h-[250px] sm:h-[350px] lg:h-[550px] w-full rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/80">
+            <div 
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url('${bgImageUrl}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            {/* Elegant Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          </div>
+          
+          {/* Glass Badge on Image */}
+          <div className="absolute top-6 right-6 bg-white/20 dark:bg-black/40 backdrop-blur-md border border-white/30 dark:border-white/20 text-white px-5 py-2.5 rounded-full font-bold tracking-wider text-sm flex items-center gap-3 shadow-lg">
+            <span className="w-2.5 h-2.5 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.8)]"></span>
+            Govt. Hatchery
+          </div>
+        </div>
 
       </div>
     </motion.div>
   );
-}
+};
+
+export default Slide11;

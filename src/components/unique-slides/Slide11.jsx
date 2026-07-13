@@ -7,8 +7,8 @@ const Counter = ({ from = 0, to, duration = 2.5, delay = 0 }) => {
   const [displayValue, setDisplayValue] = useState(from);
 
   useEffect(() => {
-    const controls = animate(count, to, { 
-      duration: duration, 
+    const controls = animate(count, to, {
+      duration: duration,
       delay: delay,
       ease: [0.22, 1, 0.36, 1], // Cinematic ease out
       onUpdate: (latest) => setDisplayValue(Math.round(latest))
@@ -50,10 +50,10 @@ const Slide11 = ({ direction = 1 }) => {
 
   const contentVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { staggerChildren: 0.2, delayChildren: 0.4 } 
+      transition: { staggerChildren: 0.2, delayChildren: 0.4 }
     }
   };
 
@@ -79,11 +79,11 @@ const Slide11 = ({ direction = 1 }) => {
 
       {/* Main Glassmorphic Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/50 dark:border-slate-700/50 rounded-[40px] shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] p-6 sm:p-8 md:p-12 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 min-h-[min-content]">
-        
+
         {/* Left Column: Data Cards */}
-        <motion.div 
-          variants={contentVariants} 
-          initial="hidden" 
+        <motion.div
+          variants={contentVariants}
+          initial="hidden"
           animate="visible"
           className="w-full lg:w-[55%] flex flex-col justify-center gap-6"
         >
@@ -108,18 +108,18 @@ const Slide11 = ({ direction = 1 }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
             {/* Animated Stat Card 1 */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-[32px] p-6 md:p-8 shadow-xl border border-white/80 dark:border-slate-700/80 overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-teal-100/50 dark:bg-teal-900/20 rounded-bl-full -z-10 transition-transform group-hover:scale-110"></div>
-              
+
               <div className="flex justify-between items-start mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 dark:text-teal-400 flex items-center justify-center text-3xl shadow-inner border border-teal-200/50 dark:border-teal-800/50">
                   🐟
                 </div>
               </div>
-              
+
               <h3 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">বার্ষিক উৎপাদন</h3>
               <div className="text-5xl lg:text-6xl font-black text-slate-800 dark:text-white flex items-baseline gap-2">
                 <span className="inline-block min-w-[120px] bg-gradient-to-br from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent tabular-nums">
@@ -130,7 +130,7 @@ const Slide11 = ({ direction = 1 }) => {
             </motion.div>
 
             {/* Animated Stat Card 2 */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="relative bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl rounded-[32px] p-6 md:p-8 shadow-xl border border-white/80 dark:border-slate-700/80 overflow-hidden group"
             >
@@ -157,7 +157,7 @@ const Slide11 = ({ direction = 1 }) => {
         <div className="w-full lg:w-[45%] mt-8 lg:mt-0 relative shrink-0">
           {/* Static Image Box - NO MOTION OR ROTATE ANIMATION */}
           <div className="relative h-[250px] sm:h-[350px] lg:h-[550px] w-full rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/80">
-            <div 
+            <div
               className="absolute inset-0"
               style={{
                 backgroundImage: `url('${bgImageUrl}')`,
@@ -168,7 +168,7 @@ const Slide11 = ({ direction = 1 }) => {
             {/* Elegant Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
           </div>
-          
+
           {/* Glass Badge on Image */}
           <div className="absolute top-6 right-6 bg-white/20 dark:bg-black/40 backdrop-blur-md border border-white/30 dark:border-white/20 text-white px-5 py-2.5 rounded-full font-bold tracking-wider text-sm flex items-center gap-3 shadow-lg">
             <span className="w-2.5 h-2.5 rounded-full bg-teal-400 shadow-[0_0_10px_rgba(45,212,191,0.8)]"></span>

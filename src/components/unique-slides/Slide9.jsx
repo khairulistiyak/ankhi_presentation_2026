@@ -1,92 +1,119 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Slide9({ direction }) {
-  const variants = {
-    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 200 : -200, rotateY: dir > 0 ? -30 : 30 }),
-    center: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.8, type: "spring", bounce: 0.3 } },
-    exit: (dir) => ({ opacity: 0, x: dir < 0 ? 200 : -200, rotateY: dir < 0 ? -30 : 30, transition: { duration: 0.6 } })
+const Slide9 = ({ direction = 1 }) => {
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    }),
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring" } }
+  // Wave effect for text (staggered letters/words)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.5,
+      },
+    },
   };
+
+  const textWaveVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  const bgImageUrl = "https://image.pollinations.ai/prompt/A%20beautiful%20high-quality%20landscape%20photo%20of%20a%20river%20or%20natural%20water%20body%20in%20Bangladesh?width=1200&height=800&nologo=true";
+
+  const textContent = "বাংলাদেশ নদীমাতৃক দেশ। কিন্তু ক্রমবর্ধমান জনসংখ্যার কারণে প্রাকৃতিক উৎস থেকে প্রাপ্ত মাছ দিয়ে আমাদের আমিষের চাহিদা পুরোপুরি মেটে না।".split(" ");
 
   return (
     <motion.div
       custom={direction}
-      variants={variants}
+      variants={slideVariants}
       initial="enter"
       animate="center"
       exit="exit"
-      className="absolute inset-0 w-full h-full bg-slate-100 flex items-center justify-center p-8 overflow-hidden [perspective:1000px]"
+      className="absolute inset-0 flex items-center justify-center overflow-hidden bg-slate-900"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Background Image with Slow Cinematic Zoom */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ scale: 1.2, filter: 'blur(5px)' }}
+        animate={{ scale: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 12, ease: "easeOut" }}
+        style={{
+          backgroundImage: `url('${bgImageUrl}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
       
-      <div className="max-w-6xl w-full z-10">
-        <div className="text-center mb-12">
-          <span className="text-rose-500 font-bold uppercase tracking-widest text-sm block mb-2">Dosage Info</span>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-800 mb-4">হরমোন প্রয়োগের মাত্রা</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-            হরমোন প্রয়োগের মাত্রা বিভিন্ন মাছের ক্ষেত্রে বিভিন্ন রকম হয়ে থাকে। কার্প জাতীয় মাছের ক্ষেত্রে ইনজেকশন দেওয়ার নিয়ম নিচে দেওয়া হলো।
-          </p>
-        </div>
+      {/* Dark Overlay for better text contrast */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Female Fish Card */}
-          <motion.div 
-            variants={cardVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-[32px] p-10 shadow-xl shadow-rose-900/5 border-t-8 border-rose-500 relative overflow-hidden group"
+      {/* Content Container */}
+      <div className="relative z-20 w-full max-w-5xl p-6 text-center sm:p-12 md:p-16">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-black/30 p-8 shadow-[0_0_50px_rgba(0,0,0,0.5)] backdrop-blur-md sm:p-14"
+        >
+          <motion.h1
+            initial={{ y: 30, opacity: 0, filter: 'blur(10px)' }}
+            animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+            transition={{ delay: 0.3, duration: 1.2, type: "spring" }}
+            className="mb-10 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-32 w-32 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
-            </div>
-            <div className="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-6">♀</div>
-            <h3 className="text-3xl font-bold text-slate-800 mb-6">স্ত্রী মাছ (Female)</h3>
-            <div className="space-y-6">
-              <div className="bg-rose-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-rose-700 mb-2 text-xl">প্রথম ডোজ</h4>
-                <p className="text-slate-600">৫ থেকে ৬ মিলি দ্রবণ পুশ করা হয়।</p>
-              </div>
-              <div className="bg-rose-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-rose-700 mb-2 text-xl">দ্বিতীয় ডোজ</h4>
-                <p className="text-slate-600">প্রথম ডোজ দেওয়ার ঠিক ৬ ঘন্টা পর দ্বিতীয় ডোজ দেওয়া হয়।</p>
-              </div>
-            </div>
-          </motion.div>
+            <span className="bg-gradient-to-r from-cyan-300 to-blue-200 bg-clip-text py-3 text-transparent leading-relaxed drop-shadow-lg">
+              ভূমিকা
+            </span>
+          </motion.h1>
 
-          {/* Male Fish Card */}
-          <motion.div 
-            variants={cardVariants}
+          {/* Wave effect implementation for paragraph */}
+          <motion.p
+            variants={containerVariants}
             initial="hidden"
-            animate="show"
-            transition={{ delay: 0.4 }}
-            className="bg-white rounded-[32px] p-10 shadow-xl shadow-blue-900/5 border-t-8 border-blue-500 relative overflow-hidden group"
+            animate="visible"
+            className="flex flex-wrap justify-center text-xl font-medium text-slate-100 sm:text-2xl md:text-3xl leading-relaxed py-2 drop-shadow-md"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-32 w-32 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-              </svg>
-            </div>
-            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-6">♂</div>
-            <h3 className="text-3xl font-bold text-slate-800 mb-6">পুরুষ মাছ (Male)</h3>
-            <div className="space-y-6 h-full">
-              <div className="bg-blue-50 p-6 rounded-2xl h-full flex flex-col justify-center min-h-[220px]">
-                <h4 className="font-bold text-blue-700 mb-2 text-xl">একমাত্র ডোজ</h4>
-                <p className="text-slate-600 text-lg">
-                  স্ত্রী মাছের দ্বিতীয় ডোজ দেওয়ার সময়েই পুরুষ মাছকে তাদের প্রথম ও একমাত্র ডোজ দেওয়া হয়।
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            {textContent.map((word, index) => (
+              <motion.span
+                key={index}
+                variants={textWaveVariants}
+                className="mr-2 mb-2 inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </motion.p>
+        </motion.div>
       </div>
     </motion.div>
   );
-}
+};
+
+export default Slide9;

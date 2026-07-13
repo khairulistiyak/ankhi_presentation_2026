@@ -87,11 +87,6 @@ export default function Slide8_Location({ direction }) {
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-20 pointer-events-none"></div>
-          
-          <div className="absolute bottom-6 left-6 z-30 flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
-            <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></div>
-            <span className="text-rose-100 text-sm font-medium tracking-wider uppercase">Field Inspection</span>
-          </div>
         </motion.div>
       </motion.div>
     </motion.div>

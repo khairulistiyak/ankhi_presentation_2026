@@ -39,35 +39,11 @@ export default function Slide19({ direction }) {
       exit="exit"
       className="absolute inset-0 w-full h-full bg-[#040812] flex flex-col lg:flex-row items-center justify-center p-8 overflow-hidden gap-12"
     >
-      {/* Background Bubbles (Hatching Concept) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute bg-cyan-500/20 rounded-full blur-[2px]"
-            style={{
-              width: Math.random() * 20 + 5 + 'px',
-              height: Math.random() * 20 + 5 + 'px',
-              left: Math.random() * 100 + '%',
-              bottom: '-5%'
-            }}
-            animate={{
-              y: [0, -1000],
-              x: [0, Math.random() * 100 - 50],
-              opacity: [0, 0.8, 0]
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 10
-            }}
-          />
-        ))}
-      </div>
+      {/* Subtle Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.05),transparent_50%)] pointer-events-none"></div>
 
       {/* Left Text Content */}
-      <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center">
+      <div className="relative z-10 w-full lg:w-5/12 flex flex-col justify-center">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -101,16 +77,16 @@ export default function Slide19({ direction }) {
                   hidden: { opacity: 0, x: -20 },
                   show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } }
                 }}
-                className="flex items-start gap-6 bg-slate-900/50 backdrop-blur-md p-6 rounded-3xl border border-white/5 hover:border-cyan-500/30 transition-colors group"
+                className="flex items-start gap-6 bg-slate-900/60 backdrop-blur-md p-6 rounded-3xl border border-white/5 hover:border-cyan-500/30 transition-colors group shadow-xl"
               >
-                <div className={`w-14 h-14 shrink-0 rounded-2xl bg-slate-950 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500 shadow-lg`}>
+                <div className={`w-14 h-14 shrink-0 rounded-2xl bg-slate-950 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(34,211,238,0.1)]`}>
                   <Icon className="w-7 h-7 text-cyan-400" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-100 mb-2 leading-relaxed">
                     {info.title}
                   </h3>
-                  <p className="text-slate-400 leading-relaxed">
+                  <p className="text-slate-400 leading-relaxed text-sm">
                     {info.desc}
                   </p>
                 </div>
@@ -120,49 +96,56 @@ export default function Slide19({ direction }) {
         </motion.div>
       </div>
 
-      {/* Right Graphic Content (Abstract Hatching Jar Concept) */}
+      {/* Right Photo Architecture */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.4 }}
-        className="relative z-10 w-full lg:w-1/2 h-[400px] lg:h-full flex items-center justify-center"
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative z-10 w-full lg:w-7/12 h-[300px] lg:h-full py-8 flex items-center justify-center"
       >
-        <div className="relative w-[300px] h-[400px] lg:w-[400px] lg:h-[500px]">
-          {/* Abstract Circular Jar */}
-          <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-blue-600/20 rounded-[100px] border border-cyan-500/20 backdrop-blur-sm overflow-hidden flex items-end justify-center pb-10 shadow-[0_0_50px_rgba(34,211,238,0.15)]">
-            
-            {/* Water Level */}
-            <motion.div 
-              animate={{ 
-                y: [0, -10, 0],
-              }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-0 w-[200%] h-[70%] bg-gradient-to-t from-cyan-600/40 to-transparent rounded-[100%] opacity-50"
-              style={{ left: '-50%' }}
-            ></motion.div>
+        <div className="relative w-full h-full max-h-[700px] rounded-[3rem] overflow-hidden border-2 border-cyan-500/20 shadow-[0_0_60px_rgba(34,211,238,0.15)] group bg-slate-900">
+          
+          <img 
+            src="https://pollinations.ai/p/circular-hatching-jars-fish-hatchery-blue-water-cyberpunk?width=1000&height=1200&seed=19" 
+            alt="Hatching Jars" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          
+          <div className="absolute inset-0 bg-gradient-to-b from-[#040812]/50 via-transparent to-[#040812]/80"></div>
 
-            {/* Glowing Core (Eggs) */}
-            <div className="relative z-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-xl animate-pulse"></div>
-            
-            {/* Swirling lines representing water flow */}
-            <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-x-0 bottom-10 h-[200px] border-t-2 border-cyan-400/20 rounded-full"
-            ></motion.div>
-             <motion.div 
-              animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-x-10 bottom-20 h-[150px] border-t-2 border-blue-400/20 rounded-full"
-            ></motion.div>
-          </div>
-
-          {/* Holographic HUD rings around jar */}
+          {/* Animated HUD Elements over the photo */}
           <motion.div 
-            animate={{ rotateX: 360, rotateZ: 360 }}
+            animate={{ rotate: 360 }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] lg:w-[450px] lg:h-[450px] rounded-full border border-cyan-500/10 [transform-style:preserve-3d]"
+            className="absolute top-10 right-10 w-32 h-32 border border-cyan-500/30 rounded-full border-dashed opacity-50"
           ></motion.div>
+          <motion.div 
+            animate={{ rotate: -360 }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="absolute top-14 right-14 w-24 h-24 border border-blue-500/40 rounded-full border-dotted opacity-50"
+          ></motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="absolute bottom-10 left-10 right-10 bg-slate-950/70 backdrop-blur-xl border border-cyan-500/30 p-6 rounded-2xl flex items-center justify-between"
+          >
+            <div>
+              <div className="text-cyan-400 font-bold tracking-widest text-xs mb-1">SYSTEM STATUS</div>
+              <div className="text-white font-bold text-xl">Water Flow & Aeration</div>
+            </div>
+            <div className="flex gap-2">
+              {[...Array(5)].map((_, i) => (
+                <motion.div 
+                  key={i}
+                  animate={{ height: [10, Math.random() * 20 + 20, 10] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.1 }}
+                  className="w-2 bg-cyan-400 rounded-full"
+                ></motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </motion.div>
 

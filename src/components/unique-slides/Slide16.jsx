@@ -1,46 +1,58 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FlaskConical, Droplets, RotateCw, TestTubeDiagonal } from 'lucide-react';
+import { FlaskConical, Droplets, RotateCw, TestTubeDiagonal, ArrowDown, Activity } from 'lucide-react';
 
 export default function Slide16({ direction }) {
   const steps = [
     {
+      id: "01",
       title: "গ্রন্থি চূর্ণ করা",
-      desc: "সংগৃহীত পিটুইটারি গ্রন্থি টিস্যু হোমোজিনাইজার বা হামানদিস্তায় সাবধানে মিহি করে পিষে নিতে হবে।",
+      subtitle: "Tissue Homogenization",
+      desc: "পিটুইটারি গ্রন্থি টিস্যু হোমোজিনাইজার বা হামানদিস্তায় সাবধানে মিহি করে পিষে নিতে হবে।",
       icon: TestTubeDiagonal,
       color: "from-amber-400 to-orange-500",
-      shadow: "shadow-orange-500/20"
+      glowColor: "rgba(249,115,22,0.5)",
+      bgGlow: "bg-orange-500/10",
+      borderColor: "border-orange-500/30"
     },
     {
+      id: "02",
       title: "দ্রবণ তৈরি",
-      desc: "পেষা গ্রন্থির সাথে প্রয়োজনমতো পরিশ্রুত পানি (Distilled water) মিশিয়ে একটি দ্রবণ বা সাসপেনশন তৈরি করা হয়।",
+      subtitle: "Solution Mixing",
+      desc: "পেষা গ্রন্থির সাথে প্রয়োজনমতো পরিশ্রুত পানি (Distilled water) মিশিয়ে একটি দ্রবণ তৈরি করা হয়।",
       icon: Droplets,
       color: "from-blue-400 to-cyan-500",
-      shadow: "shadow-cyan-500/20"
+      glowColor: "rgba(6,182,212,0.5)",
+      bgGlow: "bg-cyan-500/10",
+      borderColor: "border-cyan-500/30"
     },
     {
+      id: "03",
       title: "সেন্ট্রিফিউজ ও সংগ্রহ",
+      subtitle: "Centrifugation",
       desc: "দ্রবণটিকে সেন্ট্রিফিউজ মেশিনে ঘুরিয়ে পরিষ্কার অংশটি আলাদা করা হয় যা ইনজেকশনের জন্য প্রস্তুত।",
       icon: RotateCw,
       color: "from-emerald-400 to-teal-500",
-      shadow: "shadow-emerald-500/20"
+      glowColor: "rgba(16,185,129,0.5)",
+      bgGlow: "bg-emerald-500/10",
+      borderColor: "border-emerald-500/30"
     }
   ];
 
   const variants = {
-    enter: (dir) => ({ opacity: 0, x: dir > 0 ? 100 : -100, scale: 0.95 }),
-    center: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-    exit: (dir) => ({ opacity: 0, x: dir < 0 ? 100 : -100, scale: 0.95, transition: { duration: 0.5 } })
+    enter: (dir) => ({ opacity: 0, scale: 0.95, y: dir > 0 ? 50 : -50 }),
+    center: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    exit: (dir) => ({ opacity: 0, scale: 0.95, y: dir < 0 ? 50 : -50, transition: { duration: 0.6 } })
   };
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } }
+    show: { opacity: 1, transition: { staggerChildren: 0.3, delayChildren: 0.4 } }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80, damping: 15 } }
+    hidden: { opacity: 0, x: 50 },
+    show: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 80, damping: 20 } }
   };
 
   return (
@@ -50,78 +62,177 @@ export default function Slide16({ direction }) {
       initial="enter"
       animate="center"
       exit="exit"
-      className="absolute inset-0 w-full h-full bg-[#030712] flex flex-col items-center justify-center p-8 overflow-hidden"
+      className="absolute inset-0 w-full h-full bg-[#050B14] flex items-center justify-center p-8 overflow-hidden"
     >
-      {/* Background CAD Grid and Ambient Light */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
-      <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-emerald-900/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
+      {/* Background Graphic */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(6,182,212,0.1),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+      </div>
 
-      <div className="relative z-10 w-full max-w-6xl">
-        {/* Header Section */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex items-center gap-6 mb-16"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 flex items-center justify-center shadow-[0_0_30px_rgba(56,189,248,0.15)] relative overflow-hidden">
-             <div className="absolute inset-0 bg-blue-400/20 animate-pulse mix-blend-overlay"></div>
-             <FlaskConical className="w-8 h-8 text-cyan-400 relative z-10" />
-          </div>
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 py-2 leading-normal tracking-wide">
-              পিজি (PG) দ্রবণ প্রস্তুতকরণ
+      <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row gap-12 items-center h-full">
+
+        {/* Left Side: Photo & System HUD */}
+        <div className="w-full lg:w-5/12 h-full py-8 flex flex-col justify-center relative">
+
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-bold tracking-widest uppercase mb-4 text-xs">
+              <Activity className="w-4 h-4" />
+              <span>Lab Process UI</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200 py-2 leading-normal drop-shadow-lg">
+              পিজি (PG) <br />দ্রবণ প্রস্তুতকরণ
             </h2>
-            <div className="h-1 w-32 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mt-2"></div>
-          </div>
-        </motion.div>
+            <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-4"></div>
+          </motion.div>
 
-        {/* Steps Grid */}
-        <motion.div 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full h-[400px] lg:h-[500px] rounded-[3rem] overflow-hidden border border-cyan-500/20 shadow-[0_0_50px_rgba(6,182,212,0.1)] group bg-slate-900"
+          >
+            {/* Animated SVG/Icon Design for Lab Mixing */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Outer glowing ring */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[280px] h-[280px] border border-cyan-500/20 rounded-full border-dashed"
+              ></motion.div>
+              
+              {/* Inner rotating ring */}
+              <motion.div 
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[200px] h-[200px] border-2 border-blue-500/30 rounded-full border-dotted"
+              ></motion.div>
+
+              {/* Central Flask Icon */}
+              <div className="relative w-32 h-32 bg-slate-900 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(6,182,212,0.3)] border border-cyan-400/50 z-10">
+                <FlaskConical className="w-16 h-16 text-cyan-400 relative z-10" />
+                
+                {/* Animated Liquid Level Inside the circle */}
+                <motion.div 
+                  animate={{ y: [10, -10, 10] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-cyan-500/40 to-transparent rounded-b-full h-1/2 pointer-events-none"
+                ></motion.div>
+              </div>
+
+              {/* Floating Particles/Bubbles */}
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  animate={{ 
+                    y: [0, -150], 
+                    x: [0, (Math.random() - 0.5) * 100],
+                    opacity: [0, 1, 0] 
+                  }}
+                  transition={{ 
+                    duration: 3 + Math.random() * 2, 
+                    repeat: Infinity, 
+                    delay: Math.random() * 2,
+                    ease: "easeOut"
+                  }}
+                  className="absolute w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,1)]"
+                  style={{ top: '60%' }}
+                ></motion.div>
+              ))}
+            </div>
+            
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-transparent to-[#050B14]/40"></div>
+            
+            {/* Overlay Grid */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none mix-blend-screen"></div>
+
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="bg-slate-900/80 backdrop-blur-xl border border-cyan-500/30 p-5 rounded-2xl flex items-center justify-between shadow-2xl">
+                <div>
+                  <div className="text-cyan-400 text-xs font-bold tracking-widest mb-1">SYSTEM STATUS</div>
+                  <div className="text-white text-lg font-bold">Extraction Active</div>
+                </div>
+                <div className="flex gap-1.5 h-6 items-end">
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{ height: [8, Math.random() * 24 + 4, 8] }}
+                      transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.1 }}
+                      className="w-1.5 bg-cyan-400 rounded-sm"
+                    ></motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Side: Vertical Lab Process Pipeline */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="w-full lg:w-7/12 flex flex-col justify-center relative py-12 pl-6 md:pl-12"
         >
+          {/* Main Pipeline Tube */}
+          <div className="absolute left-[38px] md:left-[62px] top-10 bottom-10 w-2 bg-slate-800 rounded-full overflow-hidden shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
+            <motion.div
+              animate={{ y: ["-100%", "400%"] }}
+              transition={{ duration: 4, ease: "linear", repeat: Infinity }}
+              className="w-full h-1/4 bg-gradient-to-b from-transparent via-cyan-400 to-transparent blur-[2px]"
+            ></motion.div>
+          </div>
+
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group relative bg-slate-900/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:bg-slate-800/50 transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
+                className="relative flex items-center gap-6 md:gap-10 mb-12 last:mb-0 group"
               >
-                {/* Glow Effect behind icon */}
-                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500 rounded-full`}></div>
-                
-                {/* Icon Container */}
-                <div className={`w-20 h-20 rounded-2xl bg-slate-950/80 border border-white/10 flex items-center justify-center mb-8 relative z-10 shadow-xl ${step.shadow} group-hover:scale-110 transition-transform duration-500`}>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-10 rounded-2xl`}></div>
-                  <Icon className="w-10 h-10 text-white opacity-80 group-hover:opacity-100 transition-opacity" />
-                  
-                  {/* Step Number Badge */}
-                  <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center text-slate-950 font-bold text-sm shadow-lg`}>
-                    {index + 1}
-                  </div>
+                {/* Node Connector */}
+                <div className="absolute left-[42px] md:left-[66px] top-1/2 w-8 md:w-12 h-1 bg-slate-700 -z-10 group-hover:bg-cyan-500/50 transition-colors"></div>
+
+                {/* Circular Process Node */}
+                <div className={`relative z-10 w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-full bg-slate-950 border-4 border-slate-800 group-hover:${step.borderColor} flex items-center justify-center shadow-xl transition-all duration-500`}
+                  style={{ boxShadow: `0 0 20px ${step.glowColor}` }}>
+                  {/* Rotating Ring */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className={`absolute inset-[-6px] rounded-full border border-dashed ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity`}
+                  ></motion.div>
+
+                  <Icon className={`w-8 h-8 md:w-10 md:h-10 text-transparent bg-clip-text bg-gradient-to-br ${step.color}`} style={{ color: "white" }} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-100 mb-4 py-1 leading-snug relative z-10">
-                  {step.title}
-                </h3>
-                
-                <p className="text-slate-400 leading-relaxed relative z-10">
-                  {step.desc}
-                </p>
-
-                {/* Bottom connection line for layout (visible on md+) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-[2px] bg-white/10 -translate-y-1/2 z-0"></div>
-                )}
+                {/* Content Card */}
+                <div className={`flex-1 ${step.bgGlow} backdrop-blur-md border border-white/5 group-hover:${step.borderColor} rounded-3xl p-6 transition-all duration-500 shadow-lg`}>
+                  <div className="flex items-center gap-4 mb-2">
+                    <span className={`text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b ${step.color} opacity-40`}>
+                      {step.id}
+                    </span>
+                    <div>
+                      <div className="text-xs font-bold text-slate-400 tracking-widest uppercase mb-1">{step.subtitle}</div>
+                      <h3 className="text-2xl font-bold text-white leading-normal">{step.title}</h3>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed text-sm md:text-base mt-3 border-t border-white/10 pt-3">
+                    {step.desc}
+                  </p>
+                </div>
               </motion.div>
             );
           })}
+
         </motion.div>
+
       </div>
     </motion.div>
   );

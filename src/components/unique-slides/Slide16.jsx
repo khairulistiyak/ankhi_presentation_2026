@@ -71,27 +71,27 @@ export default function Slide16({ direction }) {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row gap-12 items-center h-full">
-        
+
         {/* Left Side: Photo & System HUD */}
         <div className="w-full lg:w-5/12 h-full py-8 flex flex-col justify-center relative">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-bold tracking-widest uppercase mb-4 text-xs">
-               <Activity className="w-4 h-4" />
-               <span>ল্যাবরেটরি প্রক্রিয়া</span>
+              <Activity className="w-4 h-4" />
+              <span>ল্যাবরেটরি প্রক্রিয়া</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200 py-2 leading-normal drop-shadow-lg">
-              পিজি (PG) <br/>দ্রবণ প্রস্তুতকরণ
+              পিজি (PG) <br />দ্রবণ প্রস্তুতকরণ
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mt-4"></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -99,10 +99,10 @@ export default function Slide16({ direction }) {
           >
             {/* Animated SVG/Icon Design for Lab Mixing (Steps 1-2-3) */}
             <div className="absolute inset-0 flex flex-col items-center justify-center p-8 z-10">
-              
+
               {/* Central connecting line */}
               <div className="absolute top-1/4 bottom-1/4 w-1 bg-slate-800 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   animate={{ y: ["-100%", "400%"] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   className="w-full h-1/3 bg-gradient-to-b from-transparent via-cyan-400 to-transparent"
@@ -121,7 +121,7 @@ export default function Slide16({ direction }) {
               <div className="flex flex-col items-center relative z-10 mb-8">
                 <div className="w-20 h-20 rounded-full bg-slate-950 border-2 border-cyan-500/60 shadow-[0_0_30px_rgba(6,182,212,0.4)] flex items-center justify-center relative overflow-hidden">
                   <FlaskConical className="w-10 h-10 text-cyan-400 relative z-10" />
-                  <motion.div 
+                  <motion.div
                     animate={{ y: [5, -5, 5] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute inset-x-0 bottom-0 h-1/2 bg-cyan-500/30 rounded-b-full pointer-events-none"
@@ -133,7 +133,7 @@ export default function Slide16({ direction }) {
               {/* Step 3 Graphic */}
               <div className="flex flex-col items-center relative z-10">
                 <div className="w-16 h-16 rounded-full bg-slate-950 border border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center justify-center relative">
-                  <motion.div 
+                  <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                     className="absolute inset-0 border border-emerald-500 border-dashed rounded-full"
@@ -147,14 +147,14 @@ export default function Slide16({ direction }) {
               {[...Array(6)].map((_, i) => (
                 <motion.div
                   key={i}
-                  animate={{ 
-                    y: [0, -100], 
+                  animate={{
+                    y: [0, -100],
                     x: [0, (Math.random() - 0.5) * 50],
-                    opacity: [0, 1, 0] 
+                    opacity: [0, 1, 0]
                   }}
-                  transition={{ 
-                    duration: 2 + Math.random() * 2, 
-                    repeat: Infinity, 
+                  transition={{
+                    duration: 2 + Math.random() * 2,
+                    repeat: Infinity,
                     delay: Math.random() * 2,
                   }}
                   className="absolute w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.8)]"
@@ -163,9 +163,9 @@ export default function Slide16({ direction }) {
               ))}
 
             </div>
-            
+
             <div className="absolute inset-0 bg-gradient-to-t from-[#050B14] via-slate-900/80 to-[#050B14]/40"></div>
-            
+
             {/* Overlay Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none mix-blend-screen"></div>
 
@@ -173,7 +173,7 @@ export default function Slide16({ direction }) {
         </div>
 
         {/* Right Side: Vertical Lab Process Pipeline */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
@@ -181,7 +181,7 @@ export default function Slide16({ direction }) {
         >
           {/* Main Pipeline Tube */}
           <div className="absolute left-[38px] md:left-[62px] top-10 bottom-10 w-2 bg-slate-800 rounded-full overflow-hidden shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
-            <motion.div 
+            <motion.div
               animate={{ y: ["-100%", "400%"] }}
               transition={{ duration: 4, ease: "linear", repeat: Infinity }}
               className="w-full h-1/4 bg-gradient-to-b from-transparent via-cyan-400 to-transparent blur-[2px]"
@@ -191,7 +191,7 @@ export default function Slide16({ direction }) {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="relative flex items-center gap-6 md:gap-10 mb-12 last:mb-0 group"
@@ -201,14 +201,14 @@ export default function Slide16({ direction }) {
 
                 {/* Circular Process Node */}
                 <div className={`relative z-10 w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-full bg-slate-950 border-4 border-slate-800 group-hover:${step.borderColor} flex items-center justify-center shadow-xl transition-all duration-500`}
-                     style={{ boxShadow: `0 0 20px ${step.glowColor}` }}>
+                  style={{ boxShadow: `0 0 20px ${step.glowColor}` }}>
                   {/* Rotating Ring */}
-                  <motion.div 
+                  <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                     className={`absolute inset-[-6px] rounded-full border border-dashed ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity`}
                   ></motion.div>
-                  
+
                   <Icon className={`w-8 h-8 md:w-10 md:h-10 text-transparent bg-clip-text bg-gradient-to-br ${step.color}`} style={{ color: "white" }} />
                 </div>
 

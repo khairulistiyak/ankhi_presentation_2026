@@ -33,14 +33,8 @@ export const slideRegistry = [
   { id: 9, component: Slide9 },
   { id: 10, component: Slide10 },
   { id: 11, component: Slide11 },
-  { id: 12, component: Slide6 },
-  { id: 13, component: Slide7 },
-  { id: 14, component: Slide8 },
-  { id: 15, component: Slide9 },
-  { id: 16, component: Slide10 },
-  { id: 17, component: Slide11 },
-  { id: 18, component: Slide12 },
-  { id: 19, component: Slide13 },
-  { id: 20, component: Slide14 },
-  { id: 21, component: Slide15 },
+  { id: 12, component: Slide12 },
+  { id: 13, component: Slide13 },
+  { id: 14, component: Slide14 },
+  { id: 15, component: Slide15 }
 ];

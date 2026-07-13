@@ -13,26 +13,68 @@ const Slide14 = ({ direction = 1 }) => {
     visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
   };
 
-  // Pop-in with slight rotation (placing on lab table)
-  const materialVariants = {
-    hidden: { opacity: 0, scale: 0.5, rotate: 15, y: 50 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      rotate: 0, 
-      y: 0,
-      transition: { type: "spring", stiffness: 200, damping: 15 } 
-    }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
   };
 
-  const bgImageUrl = "https://image.pollinations.ai/prompt/Close%20up%20of%20a%20pH%20meter,%20magnifying%20glass,%20and%20water%20testing%20kit%20in%20a%20scientific%20lab%20environment?width=800&height=1200&nologo=true";
+  // --- UNIQUE DATA-DRIVEN ANIMATION: BIOMETRIC FISH SCANNER ---
+  const BiometricFishScanner = () => (
+    <div className="relative w-full h-full min-h-[220px] flex items-center justify-center bg-slate-900/80 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-[inset_0_0_30px_rgba(16,185,129,0.1)]">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTIwIDBMMCAwTDAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNiwgMTg1LCAxMjksIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')] opacity-50"></div>
+      
+      {/* Target Reticle */}
+      <motion.div 
+        animate={{ rotate: 360 }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        className="absolute w-48 h-48 border border-emerald-500/20 rounded-full border-dashed"
+      />
+      <div className="absolute w-64 h-64 border border-emerald-500/10 rounded-full"></div>
 
-  const materials = [
-    { title: "পিএইচ (pH) মিটার ও অ্যামোনিয়া কিট", icon: "🌡️", color: "from-rose-400 to-red-500" },
-    { title: "ম্যাগনিফাইং গ্লাস ও অ্যালকোহল", icon: "🔍", color: "from-purple-400 to-fuchsia-500" },
-    { title: "ফিনাইল ব্লু, পাতিত পানি", icon: "💧", color: "from-blue-400 to-cyan-500" },
-    { title: "পেট্রিডিশ, ফোম, জাল ও হ্যাচারি", icon: "🧫", color: "from-amber-400 to-yellow-500" },
-  ];
+      {/* Fish Outline/Hologram */}
+      <div className="relative z-10 w-40 h-16 flex items-center justify-center">
+        {/* Simple Abstract Fish Shape */}
+        <div className="w-32 h-12 bg-emerald-500/20 rounded-[50%_50%_50%_50%_/_60%_60%_40%_40%] backdrop-blur-sm border border-emerald-400/50 relative shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+          {/* Tail */}
+          <div className="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 border-l-8 border-l-emerald-400/50 border-y-8 border-y-transparent"></div>
+          {/* Eye */}
+          <div className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-emerald-300 shadow-[0_0_5px_#6ee7b7] animate-pulse"></div>
+          {/* Pectoral Fin */}
+          <div className="absolute bottom-1 left-10 w-4 h-3 bg-emerald-400/40 rounded-b-full"></div>
+        </div>
+      </div>
+
+      {/* Laser Scanner Line */}
+      <motion.div 
+        animate={{ x: ["-120px", "120px", "-120px"] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-0 bottom-0 w-0.5 bg-emerald-400 shadow-[0_0_15px_#34d399] z-20"
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-32 bg-emerald-300/30 blur-[2px]"></div>
+      </motion.div>
+
+      {/* Scan Data UI Overlay */}
+      <div className="absolute top-3 left-4 flex flex-col gap-1">
+        <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-widest">Bio-Scan Active</span>
+        <div className="flex gap-1">
+          {[...Array(5)].map((_, i) => (
+            <motion.div 
+              key={i}
+              animate={{ height: [4, Math.random() * 12 + 4, 4] }}
+              transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.1 }}
+              className="w-1 bg-emerald-500/80 rounded-full"
+            />
+          ))}
+        </div>
+      </div>
+      
+      <div className="absolute bottom-3 right-4 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span className="text-[10px] font-mono text-emerald-300">MATURITY: 98%</span>
+      </div>
+    </div>
+  );
 
   return (
     <motion.div
@@ -41,97 +83,149 @@ const Slide14 = ({ direction = 1 }) => {
       initial="enter"
       animate="center"
       exit="exit"
-      className="absolute inset-0 bg-[#F8FAFC] dark:bg-[#060B14] flex items-center justify-center p-6 md:p-12 overflow-hidden font-sans"
+      className="absolute inset-0 bg-[#0F172A] dark:bg-[#060B14] flex items-center justify-center p-6 md:p-12 overflow-hidden font-sans transition-colors duration-700"
     >
-      <div 
-        className="absolute inset-0 opacity-20 dark:opacity-10 pointer-events-none scale-110"
-        style={{
-          backgroundImage: `url('${bgImageUrl}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(100px) saturate(150%)',
-        }}
-      />
+      {/* Advanced Cyberpunk Background Glow */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Grid Pattern overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgNDBMMDAgMEw0MCAwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4wMikiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==')] opacity-50"></div>
+        <div className="absolute top-[-10%] left-[20%] w-[40%] h-[40%] bg-emerald-600/20 rounded-full blur-[120px] mix-blend-screen" />
+        <div className="absolute bottom-[-10%] right-[10%] w-[50%] h-[50%] bg-cyan-600/20 rounded-full blur-[130px] mix-blend-screen" />
+      </div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 h-full max-h-[800px] items-center"
+        className="relative z-10 w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8 h-full max-h-[850px] items-center"
       >
-        
-        {/* Left Column (Static Image) */}
-        <motion.div 
-          variants={materialVariants}
-          className="lg:col-span-5 rounded-[32px] overflow-hidden relative shadow-[0_20px_50px_rgb(0,0,0,0.15)] border border-white/20 dark:border-white/5 h-[300px] lg:h-full group order-2 lg:order-1"
-        >
-          <div 
-            className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105"
-            style={{
-              backgroundImage: `url('${bgImageUrl}')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-          
-          <div className="absolute bottom-8 left-8 right-8">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>
-              <span className="text-[10px] text-white/80 font-bold uppercase tracking-widest">Water Quality</span>
-            </div>
-            <p className="text-white text-sm font-light leading-relaxed">
-              পানির গুণগত মান ও পিএইচ (pH) পরিমাপের জন্য আধুনিক যন্ত্রপাতির ব্যবহার অপরিহার্য।
-            </p>
-          </div>
-        </motion.div>
+        {/* Left Column (Content) */}
+        <div className="lg:col-span-5 flex flex-col gap-6 h-full justify-center">
 
-        {/* Right Column (Content & Lab Items) */}
-        <div className="lg:col-span-7 flex flex-col gap-6 h-full justify-center order-1 lg:order-2">
-          
-          {/* Title Box */}
-          <motion.div 
-            variants={materialVariants}
-            className="bg-white/70 dark:bg-slate-900/60 backdrop-blur-2xl rounded-[32px] p-8 border border-white/50 dark:border-white/5 shadow-xl relative overflow-hidden"
+          {/* Glassmorphic Title Box */}
+          <motion.div
+            variants={itemVariants}
+            className="flex-none bg-slate-900/60 backdrop-blur-3xl rounded-[32px] p-8 border border-slate-700/50 shadow-[0_0_40px_rgba(0,0,0,0.3)] relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-1 h-full bg-rose-500"></div>
-            
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-emerald-400 to-cyan-600"></div>
+
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span className="text-xs font-semibold tracking-[0.2em] text-slate-400 dark:text-slate-500 uppercase">
-                ল্যাবরেটরি উপকরণ (পর্ব ২)
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+              <span className="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">
+                ধাপ ১: ব্রুড সংগ্রহ
               </span>
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white leading-[1.2] tracking-tight">
-              প্রণোদিত প্রজননে 
+
+            <h2 className="text-4xl md:text-5xl font-black text-white leading-normal md:leading-relaxed tracking-tight mb-4">
+              ব্রুড মাছ
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500 py-1 inline-block">
-                ব্যবহৃত উপকরণ
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 py-2 inline-block">
+                সংগ্রহ ও নির্বাচন
               </span>
             </h2>
+            <p className="text-lg text-slate-400 font-light leading-relaxed">
+              প্রণোদিত প্রজননের জন্য সুস্থ, রোগমুক্ত ও পরিপক্ক ব্রুড (পিতামাতা) মাছ নির্বাচন করা অত্যন্ত জরুরি। প্রাকৃতিকভাবে হালদা নদী বা ভালো উৎস থেকে এদের সংগ্রহ করা হয়।
+            </p>
           </motion.div>
 
-          {/* Interactive Material Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {materials.map((item, index) => (
-              <motion.div 
+          {/* Info Features */}
+          <div className="grid grid-cols-1 gap-4">
+            {[
+              { title: "সুস্থ ও সবল", desc: "রোগমুক্ত এবং স্বাস্থ্যবান হতে হবে।", icon: "🧬", color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30" },
+              { title: "সঠিক বয়স", desc: "পূর্ণবয়স্ক ও প্রজননক্ষম হওয়া আবশ্যক।", icon: "⏳", color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/30" }
+            ].map((item, index) => (
+              <motion.div
                 key={index}
-                variants={materialVariants}
-                className="group bg-white/60 dark:bg-slate-900/40 backdrop-blur-2xl rounded-[24px] p-6 border border-white/60 dark:border-white/5 shadow-md flex flex-col items-center text-center gap-4 hover:bg-white/80 dark:hover:bg-slate-800/60 transition-all cursor-default"
+                variants={itemVariants}
+                className={`bg-slate-900/50 backdrop-blur-xl rounded-2xl p-5 border ${item.border} shadow-[0_0_15px_rgba(0,0,0,0.2)] flex items-center gap-5 hover:bg-slate-800/80 transition-all group`}
               >
-                {/* Icon Container with Lab Placement Animation */}
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br ${item.color} shadow-lg relative overflow-hidden`}>
-                  <span className="text-3xl relative z-10">{item.icon}</span>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${item.bg} ${item.color} text-2xl shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_15px_currentColor] transition-all`}>
+                  {item.icon}
                 </div>
-                
                 <div>
-                  <h3 className="text-lg font-bold text-slate-700 dark:text-slate-200 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors leading-snug">
+                  <h3 className="text-xl font-bold text-slate-200 mb-1 group-hover:text-white transition-colors">
                     {item.title}
                   </h3>
+                  <p className="text-slate-400 text-sm font-medium">
+                    {item.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+
+        {/* Right Column (Ultra-Modern UI Panels) */}
+        <div className="lg:col-span-7 h-full flex flex-col gap-6 pt-4 lg:pt-0">
+          
+          {/* Top Row: Scanner Animation */}
+          <motion.div
+            variants={itemVariants}
+            className="h-1/2 bg-slate-900/40 backdrop-blur-2xl rounded-[32px] p-6 border border-emerald-500/20 shadow-[0_0_30px_rgba(16,185,129,0.1)] relative flex flex-col overflow-hidden"
+          >
+            <div className="absolute top-5 left-6 flex items-center gap-2 z-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-ping"></span>
+              <span className="text-[10px] font-black text-emerald-300 uppercase tracking-widest">বায়োমেট্রিক অ্যানালাইসিস</span>
+            </div>
+            
+            <div className="mt-8 flex-1 w-full flex items-center justify-center">
+              <BiometricFishScanner />
+            </div>
+          </motion.div>
+
+          {/* Bottom Row: Male vs Female Identification */}
+          <div className="grid grid-cols-2 gap-6 h-1/2">
+            
+            {/* Male Criteria Card */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-slate-900/40 backdrop-blur-2xl rounded-[32px] p-6 border border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.1)] relative flex flex-col group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <h3 className="text-2xl font-bold text-blue-400 mb-4 flex items-center gap-2">
+                <span>♂</span> পুরুষ মাছ
+              </h3>
+              <ul className="space-y-3 relative z-10">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">বক্ষ পাখনা (Pectoral fin) খসখসে বা অমসৃণ হয়।</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">পেট স্বাভাবিক থাকে, ফোলা থাকে না।</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">চাপ দিলে অনেক সময় সাদা তরল বের হয়।</p>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Female Criteria Card */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-slate-900/40 backdrop-blur-2xl rounded-[32px] p-6 border border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.1)] relative flex flex-col group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <h3 className="text-2xl font-bold text-pink-400 mb-4 flex items-center gap-2">
+                <span>♀</span> স্ত্রী মাছ
+              </h3>
+              <ul className="space-y-3 relative z-10">
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">বক্ষ পাখনা (Pectoral fin) মসৃণ হয়।</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">ডিম ধারণের কারণে পেট ফোলা ও নরম থাকে।</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-500 mt-1">▹</span>
+                  <p className="text-slate-300 text-sm leading-relaxed">জননেন্দ্রিয় কিছুটা লালচে ও স্ফীত থাকে।</p>
+                </li>
+              </ul>
+            </motion.div>
+
           </div>
         </div>
 

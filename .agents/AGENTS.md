@@ -21,3 +21,7 @@
 ## 5. Global UI & Interactivity
 - **Swipe Navigation**: The application must support reliable mouse swipe and touch drag interactions to navigate between slides.
 - **Theme Toggle**: A Dark/Light mode toggle icon should be present in the corner of the application to allow dynamic theme switching.
+
+## 6. Fully Responsive UI
+- **Device Support**: The entire application and all individual slides MUST be completely responsive across all devices (mobile, tablet, desktop).
+- **Layouts**: Use Tailwind's responsive prefixes (`sm:`, `md:`, `lg:`) to ensure text, layouts, flex/grid containers, and spacing look elegant and are readable on any screen size.

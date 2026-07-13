@@ -63,39 +63,7 @@ const Slide12 = ({ direction = 1 }) => {
     </div>
   );
 
-  // Clean, modern liquid animation for Hatchery Tanks
-  const CleanLiquid = ({ level = "50%", primaryColor = "bg-emerald-500", secondaryColor = "bg-emerald-400" }) => (
-    <div className="absolute inset-0 overflow-hidden bg-slate-100 dark:bg-slate-800/80 shadow-inner">
-      <div 
-        className="absolute inset-x-0 bottom-0 w-full flex flex-col justify-end"
-        style={{ height: level, transition: 'height 2s ease-in-out' }}
-      >
-        <div className={`absolute inset-0 ${primaryColor}`}></div>
-        <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          className={`absolute left-1/2 bottom-0 w-[250%] aspect-square -translate-x-1/2 translate-y-[45%] ${secondaryColor} opacity-70`}
-          style={{ borderRadius: '43% 57% 43% 57% / 53% 45% 55% 47%' }}
-        />
-        <motion.div 
-          animate={{ rotate: -360 }}
-          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          className={`absolute left-1/2 bottom-0 w-[260%] aspect-square -translate-x-1/2 translate-y-[50%] ${primaryColor}`}
-          style={{ borderRadius: '40% 60% 65% 35% / 40% 45% 55% 60%' }}
-        />
-      </div>
-      {/* Hatchery Bubbles */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          animate={{ y: [0, -180], opacity: [0, 1, 0], scale: [0.6, 1.2, 0.8] }}
-          transition={{ duration: 1.2 + Math.random() * 1.5, repeat: Infinity, delay: Math.random() * 2 }}
-          className="absolute bottom-2 w-2 h-2 bg-white/90 rounded-full z-10"
-          style={{ left: `${20 + (i * 15)}%` }}
-        />
-      ))}
-    </div>
-  );
+
 
   return (
     <motion.div
@@ -203,25 +171,14 @@ const Slide12 = ({ direction = 1 }) => {
                 </span>
               </div>
               
-              {/* Clean 2 Houses/Tanks Animation */}
-              <div className="flex justify-center gap-10 mb-6 flex-1 items-end h-full min-h-[160px]">
+              {/* Clean Architectural House Layout (Same as Pond) */}
+              <div className="grid grid-cols-2 gap-6 mb-6 flex-1 items-center">
                 {[...Array(2)].map((_, i) => (
-                  <div key={i} className="w-28 h-full max-h-[220px] border-[8px] border-slate-200 dark:border-slate-700/50 rounded-t-3xl rounded-b-xl relative overflow-hidden bg-slate-50 dark:bg-slate-800/80 shadow-lg">
-                    {/* Tank measurement lines */}
-                    <div className="absolute right-0 top-0 bottom-0 w-3 border-l border-emerald-500/10 flex flex-col justify-between py-6 z-20">
-                      <div className="w-full h-[2px] bg-slate-300/50"></div>
-                      <div className="w-full h-[2px] bg-slate-300/50"></div>
-                      <div className="w-full h-[2px] bg-slate-300/50"></div>
-                    </div>
-                    
-                    {/* Clean Liquid rising/falling */}
-                    <motion.div 
-                      animate={{ height: ["60%", "85%", "60%"] }}
-                      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: i * 4 }}
-                      className="absolute bottom-0 inset-x-0"
-                    >
-                      <CleanLiquid level="100%" primaryColor="bg-emerald-500" secondaryColor="bg-emerald-400" />
-                    </motion.div>
+                  <div 
+                    key={i} 
+                    className="relative w-full aspect-[4/3] rounded overflow-hidden shadow-sm border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
+                  >
+                    <ArchitecturalPond delay={i * 1.5} />
                   </div>
                 ))}
               </div>

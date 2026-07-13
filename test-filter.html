@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .light-theme {
+    filter: invert(1) hue-rotate(180deg);
+    background-color: white; /* to invert properly, the base needs to be black */
+  }
+  .light-theme img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+</style>
+</head>
+<body style="background: #111; color: #eee;">
+  <div id="app">
+    <h1>Hello World</h1>
+    <img src="test.jpg" alt="test">
+  </div>
+  <button onclick="document.body.classList.toggle('light-theme')">Toggle</button>
+</body>
+</html>

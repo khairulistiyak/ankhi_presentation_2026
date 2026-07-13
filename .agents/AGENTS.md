@@ -16,6 +16,7 @@
 - **Framer Motion**: Always use Framer Motion for entering and exiting (`custom={direction}`).
 - **Static Images**: **CRITICAL RULE:** Photos must be completely STATIC. Do not apply rotation, scale, or motion animations to the images themselves.
 - **Content-Specific Animations**: While images are static, the UI elements around them (charts, floating data cards, feature pills) MUST have highly custom, meaningful animations (e.g., bars growing from 0 to 100%, numbers counting up dynamically).
+- **Data-Driven Live Animations (NEW)**: Any "live animation" requested for a slide MUST be contextual and based strictly on that slide's specific data or topic (e.g., animating water and bubbles for pond data). Do not use generic hacker/sci-fi effects unless explicitly requested.
 
 ## 4. Assets Management
 - All images are located in the `public/photo/` directory and should be referenced as `/photo/filename.jpg` or via valid external URLs (e.g., Pollinations AI placeholders) until final assets are provided.

@@ -20,6 +20,7 @@ import Slide19 from '../components/unique-slides/Slide19';
 import Slide20 from '../components/unique-slides/Slide20';
 import Slide21 from '../components/unique-slides/Slide21';
 import Slide22 from '../components/unique-slides/Slide22';
+import Slide23 from '../components/unique-slides/Slide23';
 
 // This registry cleanly maps an index/ID to its specific React component
 export const slideRegistry = [
@@ -45,4 +46,5 @@ export const slideRegistry = [
   { id: 20, component: Slide20 },
   { id: 21, component: Slide21 },
   { id: 22, component: Slide22 },
+  { id: 23, component: Slide23 },
 ];

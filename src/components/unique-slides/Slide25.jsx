@@ -18,7 +18,7 @@ const Slide25 = () => {
 
   const benefits = [
     {
-      id: "01",
+      id: "০১",
       title: "দ্রুত ও বিপুল উৎপাদন",
       color: "from-cyan-400 to-blue-500",
       shadow: "shadow-cyan-500/20",
@@ -30,7 +30,7 @@ const Slide25 = () => {
       text: "খুব অল্প সময়ে এবং সীমিত জায়গায় একসাথে প্রচুর পরিমাণে উন্নত জাতের পোনা উৎপাদন করা যায়।"
     },
     {
-      id: "02",
+      id: "০২",
       title: "নিশ্চিত প্রাপ্যতা",
       color: "from-purple-400 to-pink-500",
       shadow: "shadow-purple-500/20",
@@ -42,7 +42,7 @@ const Slide25 = () => {
       text: "প্রাকৃতিকভাবে নদী থেকে পোনা সংগ্রহের অনিশ্চয়তা দূর হয় এবং চাহিদা অনুযায়ী নির্দিষ্ট সময়ে পোনা পাওয়া যায়।"
     },
     {
-      id: "03",
+      id: "০৩",
       title: "উন্নত ও সুস্থ পোনা",
       color: "from-emerald-400 to-teal-500",
       shadow: "shadow-emerald-500/20",
@@ -54,7 +54,7 @@ const Slide25 = () => {
       text: "ইনব্রিডিং বা বংশগত ত্রুটিমুক্ত, রোগ প্রতিরোধ ক্ষমতাসম্পন্ন ও দ্রুত বর্ধনশীল সুস্থ পোনা পাওয়া নিশ্চিত হয়।"
     },
     {
-      id: "04",
+      id: "০৪",
       title: "শিল্পের স্বাবলম্বিতা",
       color: "from-orange-400 to-rose-500",
       shadow: "shadow-orange-500/20",
@@ -154,6 +154,8 @@ const Slide25 = () => {
                     {benefit.title}
                   </h2>
                 </div>
+                
+
                 
                 {/* Text Content */}
                 <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">

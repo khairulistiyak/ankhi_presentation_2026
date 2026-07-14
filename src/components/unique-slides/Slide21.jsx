@@ -32,13 +32,13 @@ const Slide21 = () => {
 
             <div className="p-8 rounded-[32px] bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/50 dark:border-white/10 shadow-xl">
               <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-light mb-6">
-                নিষিক্ত ডিমগুলো সংগ্রহ করে হ্যাচারির হ্যাচিং জার বা ফানেল জালে স্থানান্তর করা হয়, যেখানে সার্বক্ষণিক পানির ঘূর্ণন প্রবাহ থাকে। ডিম ছাড়ার প্রায় <strong className="text-blue-600 dark:text-blue-400">২০-২৪ ঘণ্টার মধ্যে</strong> ডিম ফুটে রেণু পোনা (Larva) বের হয়ে আসে।
+                নিষিক্ত ডিমগুলো সংগ্রহ করে হ্যাচারির হ্যাচিং জার বা ফানেল জালে স্থানান্তর করা হয়, যেখানে সার্বক্ষণিক পানির ঘূর্ণন প্রবাহ থাকে। ডিম ছাড়ার প্রায় <strong className="text-blue-600 dark:text-blue-400">২০-২৪ ঘণ্টার মধ্যে</strong> ডিম ফুটে রেণু পোনা বের হয়ে আসে।
               </p>
               <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-light mb-6">
-                ডিম ফোটার এই প্রক্রিয়াকে <strong className="text-teal-600 dark:text-teal-400">'ভ্রূণ উন্নয়ন' (Embryo Development)</strong> এবং এরপরের পর্যায়কে <strong className="text-teal-600 dark:text-teal-400">'লার্ভা উন্নয়ন' (Larva Development)</strong> বলা হয়। প্রাথমিক অবস্থায় লার্ভার শরীরের বিভিন্ন অঙ্গ-প্রত্যঙ্গ ধাপে ধাপে তৈরি হতে থাকে।
+                ডিম ফোটার এই প্রক্রিয়াকে <strong className="text-teal-600 dark:text-teal-400">'ভ্রূণ বিকাশ'</strong> এবং এরপরের পর্যায়কে <strong className="text-teal-600 dark:text-teal-400">'লার্ভা বিকাশ'</strong> বলা হয়। প্রাথমিক অবস্থায় লার্ভার শরীরের বিভিন্ন অঙ্গ-প্রত্যঙ্গ ধাপে ধাপে তৈরি হতে থাকে।
               </p>
               <p className="text-slate-700 dark:text-slate-300 text-lg md:text-xl leading-relaxed font-light">
-                এই সময়ে এদের মুখ তৈরি না হওয়ায় বাইরে থেকে কোনো খাবারের প্রয়োজন হয় না; এরা নিজেদের শরীরের সাথে থাকা <strong className="text-amber-500 dark:text-amber-400">কুসুম থলি (Yolk Sac)</strong> থেকেই প্রয়োজনীয় পুষ্টি গ্রহণ করে। ডিম ফোটার প্রায় <strong className="text-blue-600 dark:text-blue-400">২৪-২৫ ঘণ্টা পর</strong> লার্ভার চোখ, মুখ ও লেজের উপাঙ্গগুলো সম্পূর্ণভাবে গঠিত হয়।
+                এই সময়ে এদের মুখ তৈরি না হওয়ায় বাইরে থেকে কোনো খাবারের প্রয়োজন হয় না; এরা নিজেদের শরীরের সাথে থাকা <strong className="text-amber-500 dark:text-amber-400">কুসুম থলি</strong> থেকেই প্রয়োজনীয় পুষ্টি গ্রহণ করে। ডিম ফোটার প্রায় <strong className="text-blue-600 dark:text-blue-400">২৪-২৫ ঘণ্টা পর</strong> লার্ভার চোখ, মুখ ও লেজের উপাঙ্গগুলো সম্পূর্ণভাবে গঠিত হয়।
               </p>
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ const Slide21 = () => {
 
                 <text x="70" y="0" fontSize="14" className="fill-slate-800 dark:fill-white font-bold">২৪-২৫ ঘণ্টা</text>
                 <text x="70" y="20" fontSize="12" className="fill-slate-500 dark:fill-slate-400">উপাঙ্গ গঠন সম্পূর্ণ</text>
-                <text x="70" y="40" fontSize="12" className="fill-amber-500 font-bold">কুসুম থলি (Yolk Sac)</text>
+                <text x="70" y="40" fontSize="12" className="fill-amber-500 font-bold">কুসুম থলি</text>
               </g>
 
             </svg>

@@ -74,7 +74,7 @@ const Slide20 = () => {
               </div>
               
               <p className="text-slate-300 text-lg md:text-xl leading-relaxed font-light">
-                তবে বিশেষ প্রয়োজনে মাছের পেটে হালকা চাপ দিয়ে <span className="font-semibold text-blue-400">(Stripping Method)</span> কৃত্রিম উপায়েও প্লাস্টিকের পাত্রে ডিম্বাণু ও শুক্রাণু সংগ্রহ করে নিষিক্তকরণ করা সম্ভব।
+                তবে বিশেষ প্রয়োজনে মাছের পেটে হালকা চাপ দিয়ে <span className="font-semibold text-blue-400">(স্ট্রিপিং পদ্ধতি)</span> কৃত্রিম উপায়েও প্লাস্টিকের পাত্রে ডিম্বাণু ও শুক্রাণু সংগ্রহ করে নিষিক্তকরণ করা সম্ভব।
               </p>
             </div>
           </motion.div>

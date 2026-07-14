@@ -94,7 +94,7 @@ const Slide18 = () => {
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-blue-500/50 rounded-br-xl" />
 
               <p className="text-slate-300 text-xl md:text-3xl leading-relaxed md:leading-[1.6] font-light text-center">
-                হ্যাচারিতে ব্রুড রুই মাছের ইনজেকশন দেওয়ার জন্য সাধারণত <span className="font-semibold text-emerald-200">পিঠের পাখনার নিচে</span>, <span className="font-semibold text-teal-200">পায়ু পাখনার গোড়ায়</span> কিংবা <span className="font-semibold text-blue-200">বক্ষ পাখনার নিচে</span>—এই তিনটি অঞ্চলের যেকোনো একটি উপযুক্ত স্থান বেছে নিয়ে খুব সাবধানে পিটুইটারি নির্যাস (PG) পুশ করা হয়।
+                হ্যাচারিতে ব্রুড রুই মাছের ইনজেকশন দেওয়ার জন্য সাধারণত <span className="font-semibold text-emerald-200">পিঠের পাখনার নিচে</span>, <span className="font-semibold text-teal-200">পায়ু পাখনার গোড়ায়</span> কিংবা <span className="font-semibold text-blue-200">বক্ষ পাখনার নিচে</span>—এই তিনটি অঞ্চলের যেকোনো একটি উপযুক্ত স্থান বেছে নিয়ে খুব সাবধানে পিটুইটারি নির্যাস (পিজি) পুশ করা হয়।
               </p>
             </motion.div>
 

@@ -52,7 +52,7 @@ const Slide15 = ({ direction = 1 }) => {
               <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-sky-400 to-blue-500 rounded-r-full" />
 
               <p className="text-lg text-slate-200 leading-[2.2] py-2 pl-4">
-                হ্যাচারিতে পরিণত পুরুষ ও স্ত্রী মাছ আনার পর প্রজননের উদ্দেশ্যে এদের <span className="text-sky-300 font-bold bg-sky-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(14,165,233,0.2)]">আলাদা হাপায় (Hapa)</span> রাখা হয়। 
+                হ্যাচারিতে পরিণত পুরুষ ও স্ত্রী মাছ আনার পর প্রজননের উদ্দেশ্যে এদের <span className="text-sky-300 font-bold bg-sky-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(14,165,233,0.2)]">আলাদা হাপায়</span> রাখা হয়। 
                 ইনজেকশন দেওয়ার আগে মাছগুলোকে অন্তত <span className="text-blue-300 font-bold bg-blue-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(59,130,246,0.2)]">৬-১২ ঘণ্টা</span> কৃত্রিম ঝরনা বা পানির প্রবাহে রেখে <span className="text-white font-bold bg-white/10 px-2 py-0.5 rounded">'টেকনিক্যাল ট্রিটমেন্ট'</span> বা কন্ডিশনিং দেওয়া প্রয়োজন।
               </p>
             </div>

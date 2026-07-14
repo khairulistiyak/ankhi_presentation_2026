@@ -140,7 +140,7 @@ const Slide17 = () => {
                 <line x1="40" y1="60" x2="45" y2="60" stroke="#64748b" strokeWidth="1" />
                 <line x1="40" y1="80" x2="48" y2="80" stroke="#94a3b8" strokeWidth="1.5" />
 
-                <text x="55" y="65" fill="#38bdf8" fontSize="14" fontFamily="sans-serif" fontWeight="bold">Cool</text>
+                <text x="55" y="65" fill="#38bdf8" fontSize="14" fontFamily="sans-serif" fontWeight="bold">ঠান্ডা</text>
               </g>
 
               {/* --- 4. Holographic Calendar (বর্ষাকাল: আষাঢ় ও শ্রাবণ) --- */}
@@ -154,7 +154,7 @@ const Slide17 = () => {
 
                 {/* English Label equivalent for universal aesthetics (Months) */}
                 <text x="65" y="22" fill="#93c5fd" fontSize="12" fontFamily="sans-serif" fontWeight="bold" textAnchor="middle" letterSpacing="1">
-                  MONSOON
+                  বর্ষাকাল
                 </text>
                 
                 {/* Month Highlights (Asharh & Shrabon visually represented) */}

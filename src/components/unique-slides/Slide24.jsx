@@ -59,7 +59,7 @@ const Slide24 = () => {
             
             <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-xl flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              <span className="text-white text-xs font-medium">Surface Feeder</span>
+              <span className="text-white text-xs font-medium">উপরিস্তরের মাছ</span>
             </div>
           </motion.div>
 
@@ -82,7 +82,7 @@ const Slide24 = () => {
                 <h2 className="text-xl font-bold text-sky-100">বাসস্থান</h2>
               </div>
               <p className="text-slate-300 text-sm leading-relaxed">
-                কাতলা মাছ জলাশয়ের উপরিভাগের স্তরে (Surface feeder) বাস করে এবং সেখান থেকেই খাবার গ্রহণ করে। রুই বা মৃগেল মাছের মতো এরা নিচে থাকে না। এরাও মূলত নদীর মাছ, তবে পুকুরে ভালো বাড়ে।
+                কাতলা মাছ জলাশয়ের উপরিভাগের স্তরে বাস করে এবং সেখান থেকেই খাবার গ্রহণ করে। রুই বা মৃগেল মাছের মতো এরা নিচে থাকে না। এরাও মূলত নদীর মাছ, তবে পুকুরে ভালো বাড়ে।
               </p>
             </motion.div>
 
@@ -139,7 +139,7 @@ const Slide24 = () => {
               </div>
               <div className="flex items-start gap-2">
                 <span className="text-teal-500 mt-1">✦</span>
-                <span className="text-slate-300 text-sm">পৃষ্ঠপাখনাটি (Dorsal fin) বেশ বড় ও চওড়া হয়।</span>
+                <span className="text-slate-300 text-sm">পৃষ্ঠপাখনাটি বেশ বড় ও চওড়া হয়।</span>
               </div>
               <div className="flex items-start gap-2 lg:col-span-2">
                 <span className="text-teal-500 mt-1">✦</span>

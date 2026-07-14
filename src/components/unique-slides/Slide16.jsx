@@ -52,7 +52,7 @@ const Slide16 = ({ direction = 1 }) => {
               <div className="absolute left-0 top-8 bottom-8 w-1 bg-gradient-to-b from-purple-400 to-fuchsia-500 rounded-r-full" />
 
               <p className="text-xl text-slate-200 leading-[2.2] py-2 pl-4">
-                হরমোন তৈরির জন্য সাধারণত প্রজনন মৌসুমের শুরুতেই সুস্থ ও পরিণত <span className="text-purple-300 font-bold bg-purple-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(168,85,247,0.2)]">দাতা মাছ (Donor fish)</span> থেকে পিটুইটারি গ্রন্থি সংগ্রহ করা হয়। 
+                হরমোন তৈরির জন্য সাধারণত প্রজনন মৌসুমের শুরুতেই সুস্থ ও পরিণত <span className="text-purple-300 font-bold bg-purple-500/10 px-2 py-0.5 rounded shadow-[0_0_10px_rgba(168,85,247,0.2)]">দাতা মাছ</span> থেকে পিটুইটারি গ্রন্থি সংগ্রহ করা হয়। 
                 এটি মাছের <span className="text-fuchsia-300 font-bold">মস্তিষ্কের নিচে</span> অবস্থান করে এবং প্রজনন প্রক্রিয়া উদ্দীপিত করতে এর নির্যাস ব্যবহার করা হয়।
               </p>
             </div>

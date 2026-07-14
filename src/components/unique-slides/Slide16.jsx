@@ -71,115 +71,129 @@ const Slide16 = ({ direction = 1 }) => {
             transition={{ duration: 1, delay: 0.6 }}
             className="w-full h-[450px] relative rounded-3xl border border-slate-700/50 bg-[#090314] backdrop-blur-md overflow-hidden flex items-center justify-center shadow-2xl"
           >
-            {/* Highly Intuitive, Story-Driven SVG Animation: Fish -> Gland Extract -> Bottle */}
+            {/* Premium, Ultra-Modern & Intuitive SVG Animation: Fish -> Gland Extract -> Vial */}
             <svg width="100%" height="100%" viewBox="0 0 500 450" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
               
               <defs>
-                {/* Bottle Glass Gradient */}
-                <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-                  <stop offset="20%" stopColor="#ffffff" stopOpacity="0.1" />
-                  <stop offset="80%" stopColor="#ffffff" stopOpacity="0.1" />
-                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.3" />
+                {/* Premium Glass Gradient for Vial */}
+                <linearGradient id="premiumGlass" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#ffffff" stopOpacity="0.3" />
+                  <stop offset="20%" stopColor="#ffffff" stopOpacity="0.05" />
+                  <stop offset="80%" stopColor="#ffffff" stopOpacity="0.02" />
+                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.15" />
                 </linearGradient>
 
-                {/* Alcohol Liquid Gradient */}
-                <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#d946ef" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#7e22ce" stopOpacity="0.9" />
+                {/* Sleek Liquid Gradient */}
+                <linearGradient id="sleekLiquid" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#d946ef" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#6b21a8" stopOpacity="0.9" />
                 </linearGradient>
 
-                {/* Glowing Gland (The 'Gem') */}
-                <radialGradient id="glandGlow" cx="50%" cy="50%" r="50%">
+                {/* Gland Core Glow */}
+                <radialGradient id="glandCore" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#fef08a" stopOpacity="1" />
-                  <stop offset="40%" stopColor="#eab308" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#ca8a04" stopOpacity="0" />
+                  <stop offset="30%" stopColor="#eab308" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#a16207" stopOpacity="0" />
                 </radialGradient>
+
+                {/* Holographic Fish Body Gradient */}
+                <linearGradient id="holoFish" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#c084fc" stopOpacity="0.15" />
+                  <stop offset="100%" stopColor="#c084fc" stopOpacity="0.02" />
+                </linearGradient>
+                
+                {/* Clean Fish Outline Path */}
+                <path id="cleanFish" d="M 10 100 C 60 40, 140 40, 200 100 C 140 160, 60 160, 10 100 Z" />
               </defs>
 
-              {/* Background ambient lighting */}
-              <circle cx="250" cy="225" r="150" fill="#a855f7" opacity="0.05" filter="blur(20px)" />
+              {/* Background Ambient Glows */}
+              <circle cx="120" cy="200" r="100" fill="#a855f7" opacity="0.05" filter="blur(30px)" />
+              <circle cx="380" cy="220" r="120" fill="#d946ef" opacity="0.05" filter="blur(30px)" />
 
-              {/* --- 1. The Fish (Left Side) --- */}
-              <g transform="translate(40, 120)">
-                {/* Big Fish Body */}
-                <path d="M 0 100 C 50 20, 150 20, 200 100 C 150 180, 50 180, 0 100 Z" fill="#1e293b" stroke="#c084fc" strokeWidth="2" />
-                {/* Fish Tail */}
-                <path d="M 0 100 L -40 60 L -30 100 L -40 140 Z" fill="#1e293b" stroke="#c084fc" strokeWidth="2" />
-                {/* Fish Eye */}
-                <circle cx="160" cy="85" r="8" fill="#0f172a" stroke="#c084fc" strokeWidth="2" />
-                <circle cx="163" cy="83" r="3" fill="#c084fc" />
+              {/* --- 1. The Modern Fish Silhouette (Left Side) --- */}
+              <g transform="translate(20, 100)">
+                {/* Sleek Tail */}
+                <path d="M 15 100 L -30 60 C -25 80, -25 120, -30 140 Z" fill="url(#holoFish)" stroke="#c084fc" strokeWidth="1.5" strokeOpacity="0.6" />
                 
-                {/* Brain (মস্তিষ্ক) Indicator */}
-                <path d="M 140 60 C 150 50, 160 50, 165 60 C 165 70, 140 70, 140 60 Z" fill="none" stroke="#d946ef" strokeWidth="1.5" strokeDasharray="3 3" />
+                {/* Main Body */}
+                <use href="#cleanFish" fill="url(#holoFish)" stroke="#e879f9" strokeWidth="1.5" strokeOpacity="0.8" />
                 
-                {/* The "Pituitary Gland" resting inside the fish (only visible when not extracted) */}
-                <circle cx="150" cy="80" r="15" fill="url(#glandGlow)">
-                  <animate attributeName="opacity" values="1; 1; 0; 0; 1" dur="6s" repeatCount="indefinite" />
+                {/* Minimalist Tech Lines on Fish */}
+                <path d="M 60 65 Q 100 80, 140 65" fill="none" stroke="#c084fc" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="4 4" />
+                
+                {/* Minimalist Eye */}
+                <circle cx="160" cy="85" r="5" fill="none" stroke="#f0abfc" strokeWidth="1.5" />
+                <circle cx="162" cy="84" r="1.5" fill="#f0abfc" />
+                
+                {/* Brain / Head Area Indicator */}
+                <circle cx="145" cy="65" r="18" fill="none" stroke="#d946ef" strokeWidth="1" strokeOpacity="0.3" strokeDasharray="2 4">
+                  <animateTransform attributeName="transform" type="rotate" values="0 145 65; 360 145 65" dur="10s" repeatCount="indefinite" />
+                </circle>
+                
+                {/* The Source Gland (Pulsing inside) */}
+                <circle cx="145" cy="80" r="12" fill="url(#glandCore)">
+                  <animate attributeName="r" values="10; 14; 10" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="1; 1; 0.2; 0.2; 1" dur="5s" repeatCount="indefinite" />
                 </circle>
               </g>
 
-              {/* --- 2. The Extraction Animation (The Gland Traveling) --- */}
-              {/* Path line to guide the eye */}
-              <path d="M 190 200 Q 250 100, 350 150 L 350 300" fill="none" stroke="#eab308" strokeWidth="2" strokeDasharray="6 6" opacity="0.3" />
+              {/* --- 2. The Extraction Trail (Clean & Modern) --- */}
+              {/* Elegant curved guideline */}
+              <path d="M 175 180 C 220 160, 280 120, 375 160" fill="none" stroke="#eab308" strokeWidth="1" strokeOpacity="0.2" />
               
-              {/* The Traveling Gland */}
+              {/* Animated Light Trail / Data Stream transferring the gland */}
+              <path d="M 175 180 C 220 160, 280 120, 375 160" fill="none" stroke="#fef08a" strokeWidth="2" strokeLinecap="round" strokeDasharray="10 200">
+                <animate attributeName="stroke-dashoffset" values="210; -20" dur="2.5s" repeatCount="indefinite" ease="ease-in-out" />
+              </path>
+
+              {/* The Extracted Gland (Moving) */}
               <g>
-                <circle r="15" fill="url(#glandGlow)">
-                  {/* Follow path animation */}
+                <circle r="8" fill="url(#glandCore)">
                   <animateMotion 
-                    path="M 190 200 Q 250 100, 350 150 L 350 350" 
-                    dur="6s" 
+                    path="M 175 180 C 220 160, 280 120, 375 160 L 375 320" 
+                    dur="5s" 
                     repeatCount="indefinite" 
+                    keyPoints="0;0.5;1"
+                    keyTimes="0;0.6;1"
+                    calcMode="linear"
                   />
-                  {/* Opacity: only visible during travel */}
-                  <animate attributeName="opacity" values="0; 0; 1; 1; 0" dur="6s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0; 1; 1; 0" dur="5s" keyTimes="0; 0.2; 0.8; 1" repeatCount="indefinite" />
                 </circle>
               </g>
 
-              {/* --- 3. The Glass Bottle (Right Side - অ্যালকোহলে সংরক্ষণ) --- */}
-              <g transform="translate(300, 150)">
-                {/* Bottle Cap */}
-                <rect x="35" y="0" width="30" height="20" rx="3" fill="#334155" stroke="#94a3b8" strokeWidth="2" />
-                <rect x="30" y="20" width="40" height="10" rx="2" fill="#475569" />
+              {/* --- 3. The Premium Glass Vial (Right Side) --- */}
+              <g transform="translate(340, 150)">
+                {/* Cap / Tech Lid */}
+                <rect x="20" y="0" width="30" height="12" rx="4" fill="#1e293b" stroke="#a855f7" strokeWidth="1.5" />
+                <rect x="15" y="12" width="40" height="6" rx="2" fill="#a855f7" opacity="0.8" />
 
-                {/* Bottle Neck & Body (Glass effect) */}
-                <path d="M 40 30 L 60 30 L 75 70 L 75 220 C 75 240, 25 240, 25 220 L 25 70 Z" fill="url(#glassGrad)" stroke="#cbd5e1" strokeWidth="2" />
+                {/* Sleek Glass Body */}
+                <rect x="10" y="18" width="50" height="140" rx="25" fill="url(#premiumGlass)" stroke="#e879f9" strokeWidth="1.5" strokeOpacity="0.6" />
+                <rect x="12" y="20" width="46" height="136" rx="23" fill="none" stroke="#ffffff" strokeWidth="1" strokeOpacity="0.2" />
+
+                {/* Alcohol Fluid (Smooth Fill) */}
+                <path d="M 12 100 L 58 100 L 58 133 C 58 145, 48 155, 35 155 L 35 155 C 22 155, 12 145, 12 133 Z" fill="url(#sleekLiquid)" />
                 
-                {/* Liquid Inside (Alcohol) */}
-                <path d="M 28 120 L 72 120 L 72 220 C 72 235, 28 235, 28 220 Z" fill="url(#liquidGrad)" />
-                
-                {/* Liquid surface wave animation */}
-                <path d="M 28 120 Q 50 115, 72 120 Q 50 125, 28 120 Z" fill="#f0abfc" opacity="0.8">
-                  <animate attributeName="d" values="M 28 120 Q 50 115, 72 120 Q 50 125, 28 120 Z; M 28 120 Q 50 125, 72 120 Q 50 115, 28 120 Z; M 28 120 Q 50 115, 72 120 Q 50 125, 28 120 Z" dur="2s" repeatCount="indefinite" />
+                {/* Gentle Liquid Wave */}
+                <path d="M 12 100 Q 35 95, 58 100 Q 35 105, 12 100 Z" fill="#f0abfc" opacity="0.6">
+                  <animate attributeName="d" values="M 12 100 Q 35 95, 58 100 Q 35 105, 12 100 Z; M 12 100 Q 35 105, 58 100 Q 35 95, 12 100 Z; M 12 100 Q 35 95, 58 100 Q 35 105, 12 100 Z" dur="3s" repeatCount="indefinite" />
                 </path>
 
-                {/* Splash effect when gland drops into the liquid */}
-                <g>
-                  <circle cx="50" cy="120" r="15" fill="none" stroke="#f0abfc" strokeWidth="2" opacity="0">
-                    <animate attributeName="r" values="5; 30" dur="6s" repeatCount="indefinite" begin="4.2s" />
-                    <animate attributeName="opacity" values="0; 1; 0" dur="6s" repeatCount="indefinite" begin="4.2s" />
-                  </circle>
-                </g>
+                {/* Ripple Effect on Gland Drop */}
+                <ellipse cx="35" cy="100" rx="15" ry="4" fill="none" stroke="#fef08a" strokeWidth="1.5" opacity="0">
+                  <animate attributeName="rx" values="5; 22" dur="5s" repeatCount="indefinite" begin="3s" />
+                  <animate attributeName="opacity" values="0; 0.8; 0" dur="5s" repeatCount="indefinite" begin="3s" />
+                </ellipse>
 
-                {/* Glands already resting at the bottom */}
-                <circle cx="45" cy="210" r="8" fill="url(#glandGlow)" opacity="0.6" />
-                <circle cx="60" cy="215" r="8" fill="url(#glandGlow)" opacity="0.8" />
-                
-                {/* Bubbles in Alcohol */}
-                {[...Array(5)].map((_, i) => (
-                  <circle key={`vial-bubble-${i}`} cx={35 + Math.random() * 30} cy="220" r={1.5 + Math.random() * 2} fill="#ffffff" opacity="0">
-                    <animate attributeName="cy" values="220; 120" dur={`${Math.random() * 2 + 1.5}s`} repeatCount="indefinite" begin={`${Math.random() * 2}s`} />
-                    <animate attributeName="opacity" values="0; 0.8; 0" dur={`${Math.random() * 2 + 1.5}s`} repeatCount="indefinite" begin={`${Math.random() * 2}s`} />
-                  </circle>
-                ))}
-              </g>
+                {/* Stored Glands at the bottom */}
+                <circle cx="28" cy="140" r="6" fill="url(#glandCore)" opacity="0.7" />
+                <circle cx="42" cy="145" r="7" fill="url(#glandCore)" opacity="0.9" />
 
-              {/* Informational Arrows (No text, just pure visual guidance) */}
-              <g transform="translate(230, 250)">
-                <path d="M 0 0 L 30 -20 L 30 20 Z" fill="#eab308" opacity="0.4">
-                  <animateTransform attributeName="transform" type="translate" values="-10,0; 10,0; -10,0" dur="2s" repeatCount="indefinite" />
-                </path>
+                {/* Modern Measurement Ticks */}
+                <line x1="65" y1="50" x2="70" y2="50" stroke="#c084fc" strokeWidth="1.5" strokeOpacity="0.5" strokeLinecap="round" />
+                <line x1="65" y1="80" x2="75" y2="80" stroke="#c084fc" strokeWidth="1.5" strokeOpacity="0.8" strokeLinecap="round" />
+                <line x1="65" y1="110" x2="70" y2="110" stroke="#c084fc" strokeWidth="1.5" strokeOpacity="0.5" strokeLinecap="round" />
+                <line x1="65" y1="140" x2="75" y2="140" stroke="#c084fc" strokeWidth="1.5" strokeOpacity="0.8" strokeLinecap="round" />
               </g>
 
             </svg>

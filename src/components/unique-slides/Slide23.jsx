@@ -107,8 +107,9 @@ const HapaSVG = () => {
         {/* Floating Labels */}
         <g transform="translate(380, 250)">
           <line x1="-30" y1="-30" x2="-80" y2="-50" stroke="#10b981" strokeWidth="1" />
-          <rect x="-40" y="-35" width="60" height="15" fill="rgba(16,185,129,0.2)" stroke="#10b981" strokeWidth="1" />
-          <text x="-35" y="-25" fill="#fff" fontSize="8" fontFamily="monospace">HAPA_NET_01</text>
+          <rect x="-40" y="-40" width="85" height="25" fill="#050A15" />
+          <rect x="-40" y="-40" width="85" height="25" fill="rgba(16,185,129,0.2)" stroke="#10b981" strokeWidth="1" />
+          <text x="-35" y="-23" fill="#fff" fontSize="12">হাপা নেট ১</text>
         </g>
       </svg>
     </div>
@@ -142,8 +143,8 @@ const Slide23 = ({ direction }) => {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <h2 className="text-sm uppercase tracking-[0.3em] text-emerald-400 mb-2 font-mono py-2">
-            ধাপ ৪ // Step 04 // Natural Spawning
+          <h2 className="text-sm uppercase tracking-[0.3em] text-emerald-400 mb-2 py-2">
+            ধাপ ৪ // প্রাকৃতিক প্রজনন
           </h2>
           <h1 className="text-5xl font-bold text-white py-2 leading-tight">
             মাছের মিলন ও নিষিক্তকরণ
@@ -199,9 +200,9 @@ const Slide23 = ({ direction }) => {
             className="w-1/2 h-[500px] relative"
           >
             <div className="w-full h-full backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-6 shadow-2xl">
-              <div className="absolute top-4 left-6 text-xs text-slate-500 font-mono tracking-widest flex items-center gap-2">
+              <div className="absolute top-4 left-6 text-xs text-slate-500 tracking-widest flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                HAPA_SYSTEM_MONITOR
+                হাপা_সিস্টেম_মনিটর
               </div>
               <HapaSVG />
             </div>

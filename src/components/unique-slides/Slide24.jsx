@@ -99,12 +99,14 @@ const MixingBowlSVG = () => {
         
         {/* Floating Data Labels */}
         <line x1="320" y1="230" x2="380" y2="180" stroke="#c084fc" strokeWidth="1" />
-        <rect x="380" y="165" width="70" height="15" fill="rgba(168,85,247,0.2)" stroke="#c084fc" strokeWidth="1" />
-        <text x="385" y="175" fill="#fff" fontSize="8" fontFamily="monospace">FERTILIZATION</text>
+        <rect x="380" y="165" width="85" height="25" fill="#050A15" />
+        <rect x="380" y="165" width="85" height="25" fill="rgba(168,85,247,0.2)" stroke="#c084fc" strokeWidth="1" />
+        <text x="385" y="182" fill="#fff" fontSize="12">নিষিক্তকরণ</text>
 
         <line x1="180" y1="270" x2="120" y2="330" stroke="#c084fc" strokeWidth="1" />
-        <rect x="50" y="330" width="70" height="15" fill="rgba(168,85,247,0.2)" stroke="#c084fc" strokeWidth="1" />
-        <text x="55" y="340" fill="#fff" fontSize="8" fontFamily="monospace">OOCYTE_FUSION</text>
+        <rect x="35" y="325" width="90" height="25" fill="#050A15" />
+        <rect x="35" y="325" width="90" height="25" fill="rgba(168,85,247,0.2)" stroke="#c084fc" strokeWidth="1" />
+        <text x="40" y="342" fill="#fff" fontSize="12">ডিম্বাণু মিশ্রণ</text>
       </svg>
     </div>
   );
@@ -138,54 +140,59 @@ const Slide24 = ({ direction }) => {
           transition={{ duration: 0.8 }}
           className="absolute top-12 text-center"
         >
-          <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-2 font-mono py-2">
-            ধাপ ৪ // Step 04 // FUSION
+          <h2 className="text-sm uppercase tracking-[0.3em] text-purple-400 mb-2 py-2">
+            ধাপ ৪ // নিষিক্তকরণ
           </h2>
           <h1 className="text-5xl font-bold text-white py-2 leading-tight">
             নিষিক্তকরণ প্রক্রিয়া
           </h1>
         </motion.div>
 
-        {/* Central SVG Orbit */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="w-[600px] h-[600px] relative flex items-center justify-center mt-12"
-        >
-          <div className="absolute w-[300px] h-[300px] bg-purple-600/20 rounded-full blur-[100px] mix-blend-screen" />
-          <MixingBowlSVG />
+        {/* Main Content Flex Layout */}
+        <div className="w-full flex-grow flex items-center justify-between gap-8 mt-24">
           
-          {/* Orbital Data Card 1 */}
+          {/* Left Data Card 1 */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="absolute -left-20 top-1/4 w-80 backdrop-blur-xl bg-slate-900/60 border border-purple-500/30 p-6 rounded-2xl shadow-2xl"
+            className="w-1/4 backdrop-blur-xl bg-slate-900/60 border border-purple-500/30 p-8 rounded-3xl shadow-2xl z-20"
           >
-            <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50 mb-3">
-              <span className="text-purple-400 font-bold">1</span>
+            <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50 mb-6 shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+              <span className="text-purple-400 font-bold text-xl">1</span>
             </div>
-            <p className="text-lg text-slate-300 leading-relaxed py-2">
-              সংগৃহীত ডিম প্লাস্টিকের পাত্রে রেখে তার সাথে শুক্ৰাণু খুব ভালোভাবে মিশিয়ে নিষিক্তকরণ (Fertilization) সম্পন্ন করা হয়।
+            <p className="text-xl text-slate-300 leading-relaxed py-2">
+              সংগৃহীত ডিম প্লাস্টিকের পাত্রে রেখে তার সাথে শুক্ৰাণু খুব ভালোভাবে মিশিয়ে <strong className="text-white text-purple-300">নিষিক্তকরণ (Fertilization)</strong> সম্পন্ন করা হয়।
             </p>
           </motion.div>
 
-          {/* Orbital Data Card 2 */}
+          {/* Central SVG Orbit */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="w-1/2 h-[500px] relative flex items-center justify-center z-10"
+          >
+            <div className="absolute w-[300px] h-[300px] bg-purple-600/20 rounded-full blur-[100px] mix-blend-screen" />
+            <MixingBowlSVG />
+          </motion.div>
+          
+          {/* Right Data Card 2 */}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="absolute -right-20 bottom-1/4 w-80 backdrop-blur-xl bg-slate-900/60 border border-purple-500/30 p-6 rounded-2xl shadow-2xl"
+            className="w-1/4 backdrop-blur-xl bg-slate-900/60 border border-purple-500/30 p-8 rounded-3xl shadow-2xl z-20"
           >
-            <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50 mb-3">
-              <span className="text-purple-400 font-bold">2</span>
+            <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/50 mb-6 shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+              <span className="text-purple-400 font-bold text-xl">2</span>
             </div>
-            <p className="text-lg text-slate-300 leading-relaxed py-2">
-              নিষিক্ত হওয়ার পর ডিমগুলোকে ধুয়ে পরিষ্কার করে ইনকিউবেশন বা হাপাতে (Hapa) রাখা হয়।
+            <p className="text-xl text-slate-300 leading-relaxed py-2">
+              নিষিক্ত হওয়ার পর ডিমগুলোকে ধুয়ে পরিষ্কার করে ইনকিউবেশন বা <strong className="text-white text-purple-300">হাপাতে (Hapa)</strong> রাখা হয়।
             </p>
           </motion.div>
-        </motion.div>
+          
+        </div>
         
       </div>
     </div>

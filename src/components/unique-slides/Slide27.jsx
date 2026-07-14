@@ -37,12 +37,7 @@ const Slide27 = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-8"
         >
-          <div className="flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-900/20 border border-blue-500/20 mb-4 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_#3b82f6]" />
-            <span className="text-blue-300 font-medium tracking-widest text-[11px] uppercase">
-              চূড়ান্ত ধাপ ২৭
-            </span>
-          </div>
+
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 pb-2 leading-tight">
             ভবিষ্যৎ অনুসন্ধান ও পরিকল্পনা

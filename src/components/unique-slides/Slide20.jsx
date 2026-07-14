@@ -20,9 +20,7 @@ const Slide20 = () => {
           transition={{ duration: 0.8 }}
           className="w-full flex flex-col items-center text-center mb-8"
         >
-          <div className="px-6 py-2 rounded-full bg-cyan-900/30 border border-cyan-500/20 text-cyan-400 text-sm font-bold mb-6 tracking-[0.1em] uppercase">
-            ধাপ ৪: প্রজনন পদ্ধতি
-          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             মাছের <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 pb-2">প্রাকৃতিক মিলন</span> ও নিষিক্তকরণ
           </h1>

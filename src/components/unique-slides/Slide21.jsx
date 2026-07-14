@@ -20,9 +20,7 @@ const Slide21 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-6 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-bold mb-6 tracking-wider">
-              ধাপ ৫: ইনকিউবেশন
-            </div>
+
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-800 dark:text-white mb-8 leading-tight">
               নিষিক্ত ডিমের <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 pb-2 inline-block">

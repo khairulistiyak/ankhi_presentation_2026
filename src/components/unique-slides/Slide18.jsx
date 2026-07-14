@@ -64,18 +64,6 @@ const Slide18 = () => {
             className="w-full max-w-3xl flex flex-col items-center"
           >
             
-            {/* Step Badge */}
-            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-10 bg-emerald-500/10 px-6 py-2 rounded-full border border-emerald-500/30">
-              <motion.div 
-                animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]" 
-              />
-              <span className="text-emerald-300 text-sm font-bold tracking-widest uppercase">
-                ধাপ ৩
-              </span>
-            </motion.div>
-            
             {/* Main Title */}
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-12 leading-tight">
               সংগৃহীত মাছকে <br />

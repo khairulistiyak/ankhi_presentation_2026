@@ -24,9 +24,7 @@ const Slide17 = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-semibold mb-6 tracking-wide">
-              ধাপ ২: উপযুক্ত সময় নির্ধারণ
-            </div>
+
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
               প্রজননের <br />

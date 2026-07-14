@@ -19,12 +19,7 @@ const Slide13 = ({ direction = 1 }) => {
           transition={{ duration: 0.6 }}
           className="flex justify-between items-center mb-6"
         >
-          <div className="flex items-center gap-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="bg-emerald-500/10 text-emerald-300 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest border border-emerald-500/20">
-              ধাপ ১
-            </span>
-          </div>
+          <div></div>
           <span className="text-xs text-slate-500 border border-slate-700 px-3 py-1 rounded-full font-mono">13 / 28</span>
         </motion.div>
 

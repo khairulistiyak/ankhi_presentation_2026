@@ -2,117 +2,80 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Slide9 = ({ direction = 1 }) => {
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-    },
-    exit: (direction) => ({
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    }),
-  };
-
-  // Wave effect for text (staggered letters/words)
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const textWaveVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  };
-
-  const bgImageUrl = "https://image.pollinations.ai/prompt/A%20beautiful%20high-quality%20landscape%20photo%20of%20a%20river%20or%20natural%20water%20body%20in%20Bangladesh?width=1200&height=800&nologo=true";
-
-  const textContent = "বাংলাদেশ নদীমাতৃক দেশ। কিন্তু ক্রমবর্ধমান জনসংখ্যার কারণে প্রাকৃতিক উৎস থেকে প্রাপ্ত মাছ দিয়ে আমাদের আমিষের চাহিদা পুরোপুরি মেটে না।".split(" ");
+  const words = ['মৎস্য', 'চাষে', 'প্রণোদিত', 'প্রজনন', 'পদ্ধতি'];
 
   return (
-    <motion.div
-      custom={direction}
-      variants={slideVariants}
-      initial="enter"
-      animate="center"
-      exit="exit"
-      className="absolute inset-0 flex items-center justify-center overflow-hidden bg-slate-900"
-    >
-      {/* Background Image with Slow Cinematic Zoom */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ scale: 1.2, filter: 'blur(5px)' }}
-        animate={{ scale: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 12, ease: "easeOut" }}
+    <div className="w-full h-full bg-[#050A15] text-white overflow-hidden relative font-sans flex items-center justify-center">
+
+      {/* Ambient glow orbs */}
+      <div className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[15%] w-[450px] h-[450px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-[40%] left-[50%] w-[300px] h-[300px] bg-sky-500/8 rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Subtle grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `url('${bgImageUrl}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: 'linear-gradient(rgba(56,189,248,1) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,1) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
         }}
       />
-      
-      {/* Dark Overlay for better text contrast */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-      {/* Content Container */}
-      <div className="relative z-20 w-full max-w-5xl p-6 text-center sm:p-12 md:p-16">
+      {/* Slide number */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="absolute top-8 right-10 flex items-center gap-2"
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+        <span className="text-xs font-mono text-slate-500 tracking-[0.3em]">09 / 28</span>
+      </motion.div>
+
+      {/* Center content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-12 max-w-5xl">
+
+        {/* Top line */}
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-black/30 p-8 shadow-[0_0_50px_rgba(0,0,0,0.5)] backdrop-blur-md sm:p-14"
-        >
-          <motion.h1
-            initial={{ y: 30, opacity: 0, filter: 'blur(10px)' }}
-            animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-            transition={{ delay: 0.3, duration: 1.2, type: "spring" }}
-            className="mb-10 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
-          >
-            <span className="bg-gradient-to-r from-cyan-300 to-blue-200 bg-clip-text py-3 text-transparent leading-relaxed drop-shadow-lg">
-              ভূমিকা
-            </span>
-          </motion.h1>
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="w-24 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent mb-10 origin-center"
+        />
 
-          {/* Wave effect implementation for paragraph */}
-          <motion.p
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-wrap justify-center text-xl font-medium text-slate-100 sm:text-2xl md:text-3xl leading-relaxed py-2 drop-shadow-md"
-          >
-            {textContent.map((word, index) => (
-              <motion.span
-                key={index}
-                variants={textWaveVariants}
-                className="mr-2 mb-2 inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.p>
-        </motion.div>
+        {/* Main title — word by word */}
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8">
+          {words.map((word, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: 60, filter: 'blur(12px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{
+                delay: 0.3 + i * 0.12,
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className={`font-black leading-tight py-2 ${
+                i === 2 || i === 3
+                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-400 text-6xl md:text-7xl lg:text-8xl'
+                  : 'text-white text-5xl md:text-6xl lg:text-7xl'
+              }`}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </div>
+
+        {/* Bottom line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="w-24 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent mt-4 origin-center"
+        />
+
       </div>
-    </motion.div>
+    </div>
   );
 };
 

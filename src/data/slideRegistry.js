@@ -6,34 +6,11 @@ import Slide5_Objective from '../components/unique-slides/Slide5_Objective';
 import Slide6_ObjectivesList from '../components/unique-slides/Slide6_ObjectivesList';
 import Slide7_Schedule from '../components/unique-slides/Slide7_Schedule';
 import Slide8_Location from '../components/unique-slides/Slide8_Location';
-import Slide3 from '../components/unique-slides/Slide3';
-import Slide4 from '../components/unique-slides/Slide4';
-import Slide5 from '../components/unique-slides/Slide5';
-import Slide6 from '../components/unique-slides/Slide6';
-import Slide7 from '../components/unique-slides/Slide7';
-import Slide8 from '../components/unique-slides/Slide8';
 import Slide9 from '../components/unique-slides/Slide9';
 import Slide10 from '../components/unique-slides/Slide10';
 import Slide11 from '../components/unique-slides/Slide11';
 import Slide12 from '../components/unique-slides/Slide12';
 import Slide13 from '../components/unique-slides/Slide13';
-import Slide14 from '../components/unique-slides/Slide14';
-import Slide15 from '../components/unique-slides/Slide15';
-import Slide16 from '../components/unique-slides/Slide16';
-import Slide17 from '../components/unique-slides/Slide17';
-import Slide18 from '../components/unique-slides/Slide18';
-import Slide19 from '../components/unique-slides/Slide19';
-import Slide20 from '../components/unique-slides/Slide20';
-import Slide21 from '../components/unique-slides/Slide21';
-import Slide22 from '../components/unique-slides/Slide22';
-import Slide23 from '../components/unique-slides/Slide23';
-import Slide24 from '../components/unique-slides/Slide24';
-import Slide25 from '../components/unique-slides/Slide25';
-import Slide26 from '../components/unique-slides/Slide26';
-import Slide27 from '../components/unique-slides/Slide27';
-import Slide28 from '../components/unique-slides/Slide28';
-import Slide29 from '../components/unique-slides/Slide29';
-import Slide30 from '../components/unique-slides/Slide30';
 
 // This registry cleanly maps an index/ID to its specific React component
 export const slideRegistry = [
@@ -50,21 +27,4 @@ export const slideRegistry = [
   { id: 11, component: Slide11 },
   { id: 12, component: Slide12 },
   { id: 13, component: Slide13 },
-  { id: 14, component: Slide14 },
-  { id: 15, component: Slide15 },
-  { id: 16, component: Slide16 },
-  { id: 17, component: Slide17 },
-  { id: 18, component: Slide18 },
-  { id: 19, component: Slide19 },
-  { id: 20, component: Slide20 },
-  { id: 21, component: Slide21 },
-  { id: 22, component: Slide22 },
-  { id: 23, component: Slide23 },
-  { id: 24, component: Slide24 },
-  { id: 25, component: Slide25 },
-  { id: 26, component: Slide26 },
-  { id: 27, component: Slide27 },
-  { id: 28, component: Slide28 },
-  { id: 29, component: Slide29 },
-  { id: 30, component: Slide30 }
 ];

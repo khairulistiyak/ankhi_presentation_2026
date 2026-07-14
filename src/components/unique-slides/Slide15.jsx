@@ -71,119 +71,147 @@ const Slide15 = ({ direction = 1 }) => {
             transition={{ duration: 1, delay: 0.6 }}
             className="w-full h-[450px] relative rounded-3xl border border-slate-700/50 bg-[#020b14] backdrop-blur-md overflow-hidden flex items-end justify-center shadow-2xl"
           >
-            {/* SVG Live Animation representing Hapa (net), Artificial Shower, Flowing Water, Oxygen */}
+            {/* Advanced Live SVG Animation representing Hapa, Shower, Oxygen, and HUD Panels */}
             <svg width="100%" height="100%" viewBox="0 0 500 450" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
               
               <defs>
-                {/* Hapa Net Pattern */}
-                <pattern id="hapaNet" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M 20 0 L 0 20 M 0 0 L 20 20" fill="none" stroke="#0ea5e9" strokeOpacity="0.15" strokeWidth="1"/>
+                {/* Advanced Hapa Net / Forcefield Grid */}
+                <pattern id="hapaNet" width="30" height="30" patternUnits="userSpaceOnUse">
+                  <path d="M 30 0 L 0 30 M 0 0 L 30 30" fill="none" stroke="#0ea5e9" strokeOpacity="0.2" strokeWidth="1"/>
+                  <circle cx="15" cy="15" r="1.5" fill="#38bdf8" opacity="0.4" />
                 </pattern>
 
                 <linearGradient id="showerGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#0284c7" stopOpacity="0" />
                 </linearGradient>
 
                 <linearGradient id="poolGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#0284c7" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#082f49" stopOpacity="0.9" />
+                  <stop offset="0%" stopColor="#0284c7" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#082f49" stopOpacity="0.95" />
                 </linearGradient>
+                
+                <radialGradient id="healGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+                </radialGradient>
 
-                {/* Abstract Fish Silhouette */}
-                <path id="restingFish" d="M -30 0 C -15 -15, 15 -18, 30 0 C 15 18, -15 15, -30 0 Z M -30 0 L -45 -12 L -40 0 L -45 12 Z" />
+                {/* Detailed Fish Silhouette */}
+                <path id="restingFish" d="M 0 0 C 20 -15, 50 -15, 60 0 C 50 15, 20 15, 0 0 Z M 0 0 L -20 -15 L -10 0 L -20 15 Z" />
               </defs>
 
-              {/* Background Net (Hapa enclosure) */}
-              <rect x="50" y="100" width="400" height="350" fill="url(#hapaNet)" />
-              {/* Hapa Borders */}
-              <rect x="50" y="100" width="400" height="350" fill="none" stroke="#0ea5e9" strokeOpacity="0.3" strokeWidth="4" />
-              <line x1="50" y1="100" x2="450" y2="100" stroke="#0ea5e9" strokeOpacity="0.8" strokeWidth="6" strokeLinecap="round" />
+              {/* Background Deep Water */}
+              <rect x="0" y="150" width="500" height="300" fill="url(#poolGrad)" />
 
-              {/* Artificial Shower / Water Flow (কৃত্রিম ঝরনা) */}
-              {[...Array(20)].map((_, i) => (
-                <line 
-                  key={`shower-${i}`}
-                  x1={80 + (i * 18)} 
-                  y1="0" 
-                  x2={80 + (i * 18)} 
-                  y2="150" 
-                  stroke="url(#showerGrad)" 
-                  strokeWidth="2"
-                  strokeDasharray="10 15"
-                >
-                  <animate 
-                    attributeName="stroke-dashoffset" 
-                    values="50; 0" 
-                    dur={`${Math.random() * 0.5 + 0.3}s`} 
-                    repeatCount="indefinite" 
-                    ease="linear" 
-                  />
-                </line>
+              {/* Glowing High-Tech Hapa Container */}
+              <rect x="60" y="100" width="380" height="350" fill="url(#hapaNet)" />
+              <rect x="60" y="100" width="380" height="350" fill="none" stroke="#0ea5e9" strokeOpacity="0.4" strokeWidth="2" />
+              {/* Top Bar of the Hapa */}
+              <rect x="50" y="90" width="400" height="10" rx="4" fill="#0c4a6e" stroke="#38bdf8" strokeWidth="1" />
+              <line x1="70" y1="95" x2="430" y2="95" stroke="#7dd3fc" strokeWidth="2" strokeLinecap="round" opacity="0.8" />
+
+              {/* Artificial Shower / Waterfall (কৃত্রিম ঝরনা) */}
+              {[...Array(15)].map((_, i) => (
+                <g key={`shower-${i}`} transform={`translate(${80 + i * 24}, 100)`}>
+                  <rect x="-1" y="0" width="2" height="150" fill="url(#showerGrad)">
+                    <animate attributeName="opacity" values="0.3; 1; 0.3" dur={`${Math.random() * 0.5 + 0.5}s`} repeatCount="indefinite" />
+                  </rect>
+                  <circle cx="0" cy="150" r="2" fill="#bae6fd">
+                    <animate attributeName="cy" values="100; 250" dur={`${Math.random() * 0.3 + 0.4}s`} repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1; 0" dur={`${Math.random() * 0.3 + 0.4}s`} repeatCount="indefinite" />
+                  </circle>
+                </g>
               ))}
 
-              {/* Water Pool inside Hapa */}
-              <path fill="url(#poolGrad)">
-                <animate 
-                  attributeName="d" 
-                  dur="4s" 
-                  repeatCount="indefinite" 
-                  values="
-                    M 50 250 C 150 230, 350 270, 450 250 L 450 450 L 50 450 Z;
-                    M 50 250 C 150 270, 350 230, 450 250 L 450 450 L 50 450 Z;
-                    M 50 250 C 150 230, 350 270, 450 250 L 450 450 L 50 450 Z
-                  " 
-                />
+              {/* Surface Water Waves */}
+              <path fill="none" stroke="#38bdf8" strokeOpacity="0.4" strokeWidth="2" d="M 60 250 Q 155 240, 250 250 T 440 250">
+                <animate attributeName="d" values="M 60 250 Q 155 240, 250 250 T 440 250; M 60 250 Q 155 260, 250 250 T 440 250; M 60 250 Q 155 240, 250 250 T 440 250" dur="4s" repeatCount="indefinite" />
               </path>
 
-              {/* Fish inside Hapa (Conditioning) */}
-              <g transform="translate(180, 330) scale(1.2)">
-                <use href="#restingFish" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
-                {/* Subtle breathing animation */}
-                <animateTransform attributeName="transform" type="translate" values="180,330; 180,335; 180,330" dur="3s" repeatCount="indefinite" />
-              </g>
-              <g transform="translate(320, 370) scale(1.1) scale(-1, 1)">
-                <use href="#restingFish" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
-                <animateTransform attributeName="transform" type="translate" values="320,370; 320,375; 320,370" dur="3.5s" repeatCount="indefinite" />
+              {/* Fish inside Hapa recovering (Conditioning) */}
+              <g>
+                {/* Healing/Recovery Glow behind fish */}
+                <circle cx="180" cy="330" r="60" fill="url(#healGlow)">
+                  <animate attributeName="r" values="50; 70; 50" dur="3s" repeatCount="indefinite" />
+                </circle>
+                
+                <g transform="translate(150, 330) scale(1)">
+                  <use href="#restingFish" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+                  {/* Gentle breathing/hover animation */}
+                  <animateTransform attributeName="transform" type="translate" values="150,330; 150,335; 150,330" dur="4s" repeatCount="indefinite" />
+                </g>
+
+                <circle cx="340" cy="360" r="50" fill="url(#healGlow)">
+                  <animate attributeName="r" values="40; 60; 40" dur="3.5s" repeatCount="indefinite" />
+                </circle>
+
+                <g transform="translate(370, 360) scale(0.9) scale(-1, 1)">
+                  <use href="#restingFish" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+                  <animateTransform attributeName="transform" type="translate" values="370,360; 370,365; 370,360" dur="3.5s" repeatCount="indefinite" />
+                </g>
               </g>
 
-              {/* Oxygen Bubbles (পর্যাপ্ত অক্সিজেন) */}
-              {[...Array(12)].map((_, i) => (
+              {/* Intensive Oxygen Bubbles */}
+              {[...Array(20)].map((_, i) => (
                 <circle 
                   key={`bubble-${i}`} 
-                  cx={100 + (Math.random() * 300)} 
+                  cx={70 + (Math.random() * 360)} 
                   cy="450" 
-                  r={Math.random() * 3 + 2} 
+                  r={Math.random() * 4 + 2} 
                   fill="#ffffff" 
-                  fillOpacity="0.7"
+                  fillOpacity="0.8"
                 >
                   <animate 
                     attributeName="cy" 
                     values={`450; 250`} 
+                    dur={`${Math.random() * 3 + 2}s`} 
+                    repeatCount="indefinite" 
+                    begin={`${Math.random() * 3}s`} 
+                  />
+                  <animate 
+                    attributeName="cx" 
+                    values={`${70 + (Math.random() * 360)}; ${70 + (Math.random() * 360) + (Math.random() > 0.5 ? 10 : -10)}`} 
                     dur={`${Math.random() * 2 + 2}s`} 
                     repeatCount="indefinite" 
-                    begin={`${Math.random() * 2}s`} 
                   />
                   <animate 
                     attributeName="opacity" 
                     values="0; 1; 0" 
-                    dur={`${Math.random() * 2 + 2}s`} 
+                    dur={`${Math.random() * 3 + 2}s`} 
                     repeatCount="indefinite" 
-                    begin={`${Math.random() * 2}s`} 
+                    begin={`${Math.random() * 3}s`} 
                   />
                 </circle>
               ))}
 
-              {/* Splash effects where shower hits water */}
-              <g transform="translate(0, 250)">
-                {[...Array(6)].map((_, i) => (
-                  <ellipse key={`splash-${i}`} cx={100 + i * 50} cy="0" rx="10" ry="3" fill="none" stroke="#38bdf8" strokeOpacity="0.5" strokeWidth="1">
-                    <animate attributeName="rx" values="5; 15" dur="1s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
-                    <animate attributeName="opacity" values="1; 0" dur="1s" repeatCount="indefinite" begin={`${i * 0.2}s`} />
-                  </ellipse>
-                ))}
+              {/* --- HUD: Timer Card for '৬-১২ ঘণ্টা' (Top Right inside SVG) --- */}
+              <g transform="translate(300, 20)">
+                <rect width="180" height="60" rx="8" fill="#0f172a" fillOpacity="0.8" stroke="#0ea5e9" strokeOpacity="0.5" />
+                
+                {/* Timer Icon (Clock) */}
+                <circle cx="25" cy="22" r="8" fill="none" stroke="#38bdf8" strokeWidth="1.5" />
+                <path d="M 25 17 L 25 22 L 28 25" fill="none" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+                
+                <text x="45" y="26" fill="#bae6fd" fontSize="13" fontWeight="bold">কন্ডিশনিং সময়</text>
+                
+                {/* Linear Progress Bar for Timer */}
+                <rect x="15" y="40" width="150" height="6" rx="3" fill="#1e293b" />
+                <rect x="15" y="40" width="150" height="6" rx="3" fill="url(#showerGrad)">
+                  <animate attributeName="width" values="0; 150; 0" dur="10s" repeatCount="indefinite" />
+                </rect>
+                
+                {/* 6h and 12h markers */}
+                <text x="15" y="55" fill="#64748b" fontSize="9">০ ঘ.</text>
+                <text x="75" y="55" fill="#38bdf8" fontSize="9" textAnchor="middle">৬ ঘণ্টা</text>
+                <text x="165" y="55" fill="#64748b" fontSize="9" textAnchor="end">১২ ঘণ্টা</text>
+                
+                {/* Moving playhead dot */}
+                <circle cx="15" cy="43" r="4" fill="#bae6fd">
+                  <animate attributeName="cx" values="15; 165; 15" dur="10s" repeatCount="indefinite" />
+                </circle>
               </g>
 
+              {/* --- The Equalizer (O2 & Flow) card has been removed as requested --- */}
             </svg>
 
             {/* Visual Overlay Borders */}

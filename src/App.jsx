@@ -86,8 +86,10 @@ export default function App() {
       </div>
 
       <div className="absolute inset-0 z-30 pointer-events-none flex flex-col justify-between p-4 sm:p-8">
-        <div className="pointer-events-auto">
-           {/* Header or other global UI can go here */}
+        <div className="pointer-events-auto flex items-start">
+           <span className="text-xs text-slate-500 border border-slate-700 bg-slate-900/50 backdrop-blur-md px-3 py-1 rounded-full font-mono shadow-sm">
+             {currentSlide + 1} / {slideRegistry.length}
+           </span>
         </div>
         
         <div className="pointer-events-auto">

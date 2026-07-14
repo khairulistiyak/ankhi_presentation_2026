@@ -20,7 +20,6 @@ const Slide14 = ({ direction = 1 }) => {
           className="flex justify-between items-center mb-6"
         >
           <div></div>
-          <span className="text-xs text-slate-500 border border-slate-700 px-3 py-1 rounded-full font-mono">14 / 28</span>
         </motion.div>
 
         {/* Title */}

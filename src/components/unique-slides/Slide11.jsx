@@ -37,9 +37,7 @@ const Slide11 = ({ direction = 1 }) => {
         >
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-            <span className="text-xs font-mono tracking-[0.3em] text-violet-400 uppercase">উপকরণ</span>
           </div>
-          <span className="text-xs text-slate-500 border border-slate-700 px-3 py-1 rounded-full font-mono">11 / 28</span>
         </motion.div>
 
         {/* Title */}

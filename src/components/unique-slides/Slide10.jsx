@@ -17,7 +17,6 @@ const Slide10 = ({ direction = 1 }) => {
         className="absolute top-8 right-10 flex items-center gap-2"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-        <span className="text-xs font-mono text-slate-500 tracking-[0.3em]">10 / 28</span>
       </motion.div>
 
       {/* Main content */}

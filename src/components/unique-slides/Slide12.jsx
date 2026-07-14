@@ -36,9 +36,7 @@ const Slide12 = ({ direction = 1 }) => {
         >
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-xs font-mono tracking-[0.3em] text-blue-400 uppercase">মাছের প্রণোদিত প্রজননের ধাপগুলো</span>
           </div>
-          <span className="text-xs text-slate-500 border border-slate-700 px-3 py-1 rounded-full font-mono">12 / 28</span>
         </motion.div>
 
         {/* Title */}

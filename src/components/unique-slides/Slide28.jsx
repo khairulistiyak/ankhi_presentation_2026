@@ -79,7 +79,6 @@ const Slide28 = () => {
               সমাপ্তি
             </span>
           </div>
-          <span className="text-[11px] text-slate-400 border border-slate-700/50 bg-slate-900/50 px-3 py-1 rounded-full font-mono">28 / 28</span>
         </motion.div>
 
         {/* Content Layout */}

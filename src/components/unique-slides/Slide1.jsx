@@ -86,7 +86,7 @@ export default function Slide1({ direction }) {
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4, duration: 1.2, type: "spring", stiffness: 80 }}
-        className="relative z-10 flex flex-col items-center p-8 sm:p-12 md:p-14 lg:p-16 rounded-[40px] bg-white/[0.02] backdrop-blur-3xl border border-white/[0.05] shadow-[0_0_80px_rgba(0,0,0,0.8)] text-center w-[92%] max-w-3xl max-h-[90vh] overflow-y-auto"
+        className="relative z-10 flex flex-col items-center p-8 sm:p-12 md:p-14 lg:p-16 rounded-[40px] bg-white/[0.02] backdrop-blur-3xl border border-white/[0.05] shadow-[0_0_80px_rgba(0,0,0,0.8)] text-center w-[92%] max-w-3xl max-h-[90vh] overflow-y-auto no-scrollbar"
       >
         {/* Unique Custom SVG (Architectural Blueprint Style Fish/Aqua Farm) */}
         <motion.div

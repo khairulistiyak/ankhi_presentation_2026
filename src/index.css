@@ -12,9 +12,21 @@
     content: '';
     @apply absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent;
   }
+
+  /* Utility to hide scrollbar but allow scrolling */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: #0f172a;
 }

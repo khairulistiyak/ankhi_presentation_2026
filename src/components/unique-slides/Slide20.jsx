@@ -22,7 +22,7 @@ const Slide20 = () => {
         >
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-            মাছের <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 pb-2">প্রাকৃতিক মিলন</span> ও নিষিক্তকরণ
+            মাছের <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 leading-normal py-3">প্রাকৃতিক মিলন</span> ও নিষিক্তকরণ
           </h1>
         </motion.div>
 

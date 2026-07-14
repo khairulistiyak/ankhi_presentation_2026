@@ -89,7 +89,7 @@ const Slide25 = () => {
             <div className="w-16 h-1.5 bg-gradient-to-r from-blue-500 to-emerald-400 rounded-full mb-6" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight flex flex-col gap-2">
               প্রণোদিত প্রজননের 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 py-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 leading-normal py-3">
                 ৪টি প্রধান সুবিধা
               </span>
             </h1>

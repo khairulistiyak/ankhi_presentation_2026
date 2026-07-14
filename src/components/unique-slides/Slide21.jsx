@@ -23,7 +23,7 @@ const Slide21 = () => {
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-slate-800 dark:text-white mb-8 leading-tight">
               নিষিক্ত ডিমের <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 pb-2 inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 inline-block leading-normal py-3">
                 পরিস্ফুটন
               </span>
             </h1>

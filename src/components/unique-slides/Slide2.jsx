@@ -59,7 +59,7 @@ export default function Slide2({ direction }) {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200 tracking-wider leading-normal py-2">
+          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200 tracking-wider leading-normal py-3">
             ধন্যবাদ ও কৃতজ্ঞতা
           </h2>
           <div className="h-0.5 w-24 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto mt-4"></div>

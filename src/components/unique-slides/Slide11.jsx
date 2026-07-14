@@ -45,7 +45,7 @@ const Slide11 = ({ direction = 1 }) => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-indigo-400 py-2 mt-6 mb-4 leading-normal"
+          className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-indigo-400 mt-6 mb-4 leading-normal py-3"
         >
           উপকরণ
         </motion.h1>

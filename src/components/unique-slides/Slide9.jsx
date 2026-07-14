@@ -54,11 +54,7 @@ const Slide9 = ({ direction = 1 }) => {
                 duration: 0.9,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`font-black leading-tight py-2 ${
-                i === 2 || i === 3
-                  ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-400 text-6xl md:text-7xl lg:text-8xl'
-                  : 'text-white text-5xl md:text-6xl lg:text-7xl'
-              }`}
+              className={`font-black ${ i === 2 || i === 3 ? 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-300 to-blue-400 text-6xl md:text-7xl lg:text-8xl py-3 leading-normal' : 'text-white text-5xl md:text-6xl lg:text-7xl' }`}
             >
               {word}
             </motion.span>

@@ -39,7 +39,7 @@ const Slide27 = () => {
         >
 
           
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 pb-2 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-400 leading-normal py-3">
             ভবিষ্যৎ অনুসন্ধান ও পরিকল্পনা
           </h1>
         </motion.div>

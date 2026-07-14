@@ -30,7 +30,7 @@ const Slide19 = () => {
             
             <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               হরমোন প্রয়োগের <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 py-2 leading-relaxed block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500 leading-relaxed block py-3">
                 সঠিক মাত্রা নির্ধারণ
               </span>
             </h1>

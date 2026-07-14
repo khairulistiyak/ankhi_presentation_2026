@@ -93,7 +93,7 @@ const Slide28 = () => {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-emerald-200 pb-2 mb-2 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-emerald-200 mb-2 leading-normal py-3"
             >
               উপসংহার
             </motion.h1>

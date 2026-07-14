@@ -67,7 +67,7 @@ const Slide18 = () => {
             {/* Main Title */}
             <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-12 leading-tight">
               সংগৃহীত মাছকে <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-blue-400 pb-2 inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-blue-400 inline-block leading-normal py-3">
                 ইনজেকশন প্রদান
               </span>
             </motion.h1>

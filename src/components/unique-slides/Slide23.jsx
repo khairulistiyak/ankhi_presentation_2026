@@ -52,7 +52,7 @@ const Slide23 = () => {
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-wide flex items-center gap-3">
               মৎস্য পরিচিতি 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 pb-1">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 leading-normal py-3">
                 (রুই)
               </span>
             </h1>

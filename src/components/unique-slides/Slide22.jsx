@@ -76,7 +76,7 @@ const Slide22 = () => {
             সতর্কতা ও ব্যবস্থাপনা
           </div>
           <h1 className="text-3xl md:text-4xl font-black text-slate-800 dark:text-white mb-2 leading-tight">
-            প্রজননের <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500 pb-1">সতর্কতা</span>
+            প্রজননের <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500 leading-normal py-3">সতর্কতা</span>
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm">
             রেণু পোনা লালন-পালন সংক্রান্ত গুরুত্বপূর্ণ নির্দেশনা

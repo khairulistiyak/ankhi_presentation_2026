@@ -67,7 +67,7 @@ export default function Slide6_ObjectivesList({ direction }) {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300 py-2 leading-normal">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300 leading-normal py-3">
             ফিল্ড ভিজিটের মূল উদ্দেশ্যসমূহ
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full mt-2"></div>
@@ -84,7 +84,7 @@ export default function Slide6_ObjectivesList({ direction }) {
                 <span className="text-2xl font-bold text-white/90">{i + 1}</span>
               </div>
               <div className={`flex-1 p-6 ${obj.bg}`}>
-                <h3 className="text-xl font-bold text-white mb-2 leading-normal py-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all">
+                <h3 className="text-xl font-bold text-white mb-2 leading-normal group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all py-3">
                   {obj.title}
                 </h3>
                 <p className="text-slate-300 leading-relaxed">

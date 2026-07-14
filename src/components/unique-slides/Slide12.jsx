@@ -44,7 +44,7 @@ const Slide12 = ({ direction = 1 }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 py-2 mt-4 mb-4 leading-normal"
+          className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 mt-4 mb-4 leading-normal py-3"
         >
           মাছের প্রণোদিত প্রজননের ধাপগুলো
         </motion.h1>

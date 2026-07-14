@@ -83,7 +83,7 @@ export default function Slide3_Teachers({ direction }) {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 tracking-wider py-2 leading-normal">
+          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-400 tracking-wider leading-normal py-3">
             ধন্যবাদ ও কৃতজ্ঞতা
           </h2>
           <div className="h-1 w-32 bg-slate-700 rounded-full mx-auto mt-2"></div>

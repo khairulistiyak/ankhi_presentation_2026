@@ -28,7 +28,7 @@ const Slide17 = () => {
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
               প্রজননের <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 py-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 leading-normal py-3">
                 উপযুক্ত সময় নির্ধারণ
               </span>
             </h1>

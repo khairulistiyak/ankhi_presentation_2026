@@ -27,7 +27,7 @@ const Slide14 = ({ direction = 1 }) => {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 mb-8 py-2 leading-normal"
+          className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300 mb-8 leading-normal py-3"
         >
           ব্রুড মাছ নির্বাচন
         </motion.h1>

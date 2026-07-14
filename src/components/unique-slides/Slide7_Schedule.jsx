@@ -44,7 +44,7 @@ export default function Slide7_Schedule({ direction }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300 py-2 leading-normal">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300 leading-normal py-3">
             কার্যক্রম ও সময়
           </h2>
         </motion.div>

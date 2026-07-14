@@ -25,7 +25,7 @@ const Slide24 = () => {
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-normal flex items-center flex-wrap gap-x-3 gap-y-1">
             মৎস্য পরিচিতি 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 py-2">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400 leading-normal py-3">
               (কাতলা)
             </span>
           </h1>

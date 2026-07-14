@@ -38,7 +38,7 @@ const Slide29 = () => {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center"
         >
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-emerald-200 py-4 leading-tight drop-shadow-[0_0_40px_rgba(59,130,246,0.3)]">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-emerald-200 py-4 drop-shadow-[0_0_40px_rgba(59,130,246,0.3)] leading-normal">
             ধন্যবাদ
           </h1>
           <motion.p

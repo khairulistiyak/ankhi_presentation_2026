@@ -180,7 +180,7 @@ export default function Slide1({ direction }) {
               transition: { staggerChildren: 0.15, delayChildren: 1.4 }
             }
           }}
-          className="flex flex-wrap justify-center gap-x-2.5 sm:gap-x-4 gap-y-2 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-teal-200 tracking-tight leading-normal"
+          className="flex flex-wrap justify-center gap-x-2.5 sm:gap-x-4 gap-y-2 text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-teal-200 tracking-tight leading-normal py-4"
         >
           {titleWords.map((word, idx) => (
             <motion.span
